@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura&family=PT+Mono&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Jura', sans-serif;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.background-image img {
+  width: 100vw;
+  height: 100vh;
+}
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  padding: 10px;
+}
+
+.title-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  color: white;
+  -webkit-perspective: 250px;
+          perspective: 250px;
+}
+
+.server-name {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-size: 60px;
+  padding-top: 5%;
+  text-shadow: #aee4fa 2px 2px 10px, #aee4fa -2px -2px 10px, #aee4fa 3px 3px 20px, #aee4fa -3px -3px 20px;
+  margin-bottom: 10px;
+}
+
+.server-desc {
+  text-shadow: #aee4fa 2px 2px 20px, #aee4fa -2px -2px 20px, #aee4fa 3px 3px 40px, #aee4fa -3px -3px 40px;
+  font-size: 20px;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  margin-top: auto;
+}
+
+.loading-status {
+  color: white;
+  margin-bottom: 10px;
+  font-size: 24px;
+  letter-spacing: 2px;
+  text-shadow: #aee4fa 2px 2px 40px, #aee4fa -2px -2px 40px, #aee4fa 3px 3px 60px, #aee4fa -3px -3px 60px;
+}
+
+.loading-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.6);
+  outline: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.bar {
+  height: 100%;
+}
+
+.bar img {
+  height: 100%;
+}
+/*# sourceMappingURL=style.css.map */
