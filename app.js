@@ -66,5 +66,3 @@ function SetFilesNeeded( needed ) {
 
     DOMLoading.innerHTML = htmlString;
 }
-
-GameDetails( "Project Azuki", "git.io/past", "rp_area14_v2", 64, 76561198012345678, "darkrp", 0.5, "ru" )
