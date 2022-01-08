@@ -18,7 +18,8 @@ const keyValueProgress = {
 function ChangeHTMLStatus(string) {
     const DOMElement = document.querySelector(".loading-status");
     DOMElement.innerHTML = string;
-    console.log(`New status "${string}" was successfully innered into the DOM element!`)
+    console.log(`New status "${string}" was successfully innered into the DOM element!`);
+    UpdateLoadingBar();
 }
 
 function GetDownloadProgress() {
@@ -30,9 +31,26 @@ function GetDownloadProgress() {
     return progress
 }
 
+function UpdateLoadingBar() {
+    const DOMLoading = document.querySelector(".loading-bar");
+    const parentWidth = DOMLoading.clientWidth;
+    const barWidth = parentWidth / barAmount;
+    const drawAmount = Math.round(barAmount * GetDownloadProgress());
+
+    let htmlString = "";
+    DOMLoading.innerHTML = htmlString;
+    for (let index = 0; index < drawAmount; index++) {
+        htmlString = htmlString + `<div class="bar">
+            <img src="images/whitebar.jpg" style="width: ${barWidth}px" alt="bar">
+        </div>`
+    }
+
+    DOMLoading.innerHTML = htmlString;
+}
+
 function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
     const DOMHostName = document.querySelector(".server-name")
-    DOMHostName.innerHTML(servername)
+    DOMHostName.innerHTML = servername
 }
 
 function SetFilesTotal( total ) {
@@ -51,18 +69,5 @@ function SetStatusChanged( status ) {
 function SetFilesNeeded( needed ) {
     filesNeeded = needed;
 
-    const DOMLoading = document.querySelector(".loading-bar");
-    const parentWidth = DOMLoading.clientWidth;
-    const barWidth = parentWidth / barAmount;
-    const drawAmount = Math.round(barAmount * GetDownloadProgress());
-
-    let htmlString = "";
-    DOMLoading.innerHTML = htmlString;
-    for (let index = 0; index < drawAmount; index++) {
-        htmlString = htmlString + `<div class="bar">
-            <img src="images/whitebar.jpg" style="width: ${barWidth}px" alt="bar">
-        </div>`
-    }
-
-    DOMLoading.innerHTML = htmlString;
+    UpdateLoadingBar();
 }
