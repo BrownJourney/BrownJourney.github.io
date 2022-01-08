@@ -1,9 +1,19 @@
 let clientCurrentStatus = "";
 let filesTotal = 0;
 let filesNeeded = 0;
+let lastLoadProgress = 0;
 
 // Сколько объектов нам нужно отрисовать в прогресс-баре?
 const barAmount = 200;
+// Значения загрузки на ключевых этапах
+const keyValueProgress = {
+    "Client info sent!": 0.6,
+    "Received all Lua files we needed!": 0.75,
+    "Starting Lua...": 0.88,
+    "Lua Started!": 0.95,
+    "Fully connected!": 0.99,
+    "Ready to play!": 1
+}
 
 function ChangeHTMLStatus(string) {
     const DOMElement = document.querySelector(".loading-status");
@@ -12,7 +22,12 @@ function ChangeHTMLStatus(string) {
 }
 
 function GetDownloadProgress() {
-    return (filesTotal - Math.max(filesNeeded, 0)) / Math.max(filesTotal, 1)
+    const progress = (filesTotal - Math.max(filesNeeded, 0)) / Math.max(filesTotal, 1);
+    if (progress == 0 || progress >= 1) {
+        lastLoadProgress = keyValueProgress[clientCurrentStatus] ?? lastLoadProgress
+        return lastLoadProgress
+    }
+    return progress
 }
 
 function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
