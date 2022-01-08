@@ -31,7 +31,8 @@ function GetDownloadProgress() {
 }
 
 function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
-    document.querySelector(".server-name").innerHTML(servername)
+    const DOMHostName = document.querySelector(".server-name")
+    DOMHostName.innerHTML(servername)
 }
 
 function SetFilesTotal( total ) {
