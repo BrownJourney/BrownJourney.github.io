@@ -4,7 +4,7 @@ let filesNeeded = 0;
 let lastLoadProgress = 0;
 
 // Сколько объектов нам нужно отрисовать в прогресс-баре?
-const barAmount = 200;
+const barAmount = 100;
 // Значения загрузки на ключевых этапах
 const keyValueProgress = {
     "Client info sent!": 0.6,
