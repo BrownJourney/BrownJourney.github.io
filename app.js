@@ -1,73 +1,139 @@
-let clientCurrentStatus = "";
-let filesTotal = 0;
-let filesNeeded = 0;
-let lastLoadProgress = 0;
-
-// Сколько объектов нам нужно отрисовать в прогресс-баре?
-const barAmount = 100;
-// Значения загрузки на ключевых этапах
-const keyValueProgress = {
-    "Client info sent!": 0.6,
-    "Received all Lua files we needed!": 0.75,
-    "Starting Lua...": 0.88,
-    "Lua Started!": 0.95,
-    "Fully connected!": 0.99,
-    "Ready to play!": 1
+function random(min, max) {
+    return Math.random() * (max - min) + min;
 }
 
-function ChangeHTMLStatus(string) {
-    const DOMElement = document.querySelector(".loading-status");
-    DOMElement.innerHTML = string;
-    console.log(`New status "${string}" was successfully innered into the DOM element!`);
-    UpdateLoadingBar();
-}
-
-function GetDownloadProgress() {
-    const progress = (filesTotal - Math.max(filesNeeded, 0)) / Math.max(filesTotal, 1);
-    if (progress == 0 || progress >= 1) {
-        lastLoadProgress = keyValueProgress[clientCurrentStatus] ?? lastLoadProgress
-        return lastLoadProgress
-    }
-    return progress
-}
-
-function UpdateLoadingBar() {
-    const DOMLoading = document.querySelector(".loading-bar");
-    const parentWidth = DOMLoading.clientWidth;
-    const barWidth = parentWidth / barAmount;
-    const drawAmount = Math.round(barAmount * GetDownloadProgress());
-
-    let htmlString = "";
-    DOMLoading.innerHTML = htmlString;
-    for (let index = 0; index < drawAmount; index++) {
-        htmlString = htmlString + `<div class="bar">
-            <img src="images/whitebar.jpg" style="width: ${barWidth}px" alt="bar">
-        </div>`
+$(document).ready(() => {
+    const hookLinks = () => {
+        $(".nav__link").on("click", function() {
+            const section = $(this).attr("href").replace("#", "")
+    
+            const foundElement = $("section[link=" + section + "]")
+            $(document.documentElement).animate({
+                scrollTop: foundElement.offset().top - 60
+            }, 500)
+        })
     }
 
-    DOMLoading.innerHTML = htmlString;
-}
+    const elements = $(".section, .section__container, .portfolio, .container__text, .portfolio__header-title")
 
-function GameDetails( servername, serverurl, mapname, maxplayers, steamid, gamemode, volume, language ) {
-    const DOMHostName = document.querySelector(".server-name")
-    DOMHostName.innerHTML = servername
-}
+    elements.each(function() {
+        $(this).css("opacity", "0")
+    })
+    
+    $(".header").clone().appendTo("body")
+    $(".header").last().addClass("header-fixed")
+    hookLinks()
 
-function SetFilesTotal( total ) {
-    filesTotal = total;
-}
+    const header = $(".header-fixed")
+    const settings = $(".settings")
+    const overlay = $(".overlay")
+    
+    settings.on("click", function() {
+        overlay.addClass("overlay-show")
+    })
 
-function DownloadingFile( fileName ) {
-    ChangeHTMLStatus(`Downloading file ${fileName}`)
-}
+    $(".setting__switch").on("click", function() {
+        $("body").toggleClass("--dark-theme")
+        $(".setting__switch-tracker").toggleClass("switch-state")
+    })
 
-function SetStatusChanged( status ) {
-    clientCurrentStatus = status;
-    ChangeHTMLStatus(status)
-}
+    $(".overlay__footer-close").on("click", function() {
+        overlay.removeClass("overlay-show")
+    })
 
-function SetFilesNeeded( needed ) {
-    filesNeeded = needed;
+    const onScroll = () => {
+        const scrollTop = $(window).scrollTop()
+        if (scrollTop > 120) {
+            header.addClass("header-move")
+            settings.addClass("settings-move")
+        } else {
+            header.removeClass("header-move")
+            settings.removeClass("settings-move")
+        }
 
-    UpdateLoadingBar();
-}
+        elements.each(function() {
+            const specialClass = $(this).attr("anim")
+
+            if ($(this).hasClass("landing-showed") || $(this).hasClass(specialClass)) {
+                return
+            }
+
+            if ((scrollTop + $(window).height() * 0.5) >= $(this).offset().top) {
+                if (specialClass) {
+                    $(this).addClass(specialClass)
+                } else {
+                    $(this).addClass("landing-showed")
+                }
+                $(this).animate({
+                    opacity: 1,
+                }, 250)
+
+                if ($(this).attr("class").search("text-display") !== -1) {
+                    const text = $(this).html()
+                    $(this).html("")
+                    let i = 0
+                    let typeText = setInterval(() => {
+                        i = i + 1
+                        $(this).html(text.substring(0, i))
+                        if (i >= text.length) {
+                            clearInterval(typeText)
+                        }
+                    }, 10)
+                }
+            }
+        })
+    }
+
+    $(window).on("scroll", function() {
+        onScroll()
+    })
+    $(window).on("touchmove", function() {
+        onScroll()
+    })
+
+    const moveCircles = () => {
+        $(".circle").each(function() {
+            const position = $(this).offset()
+
+            $(this).animate({top: (position.top + random(-100, 100)) + "px", left: (position.left + random(-50, 50) + "px")}, 10000)
+        })
+    }
+
+    setInterval(() => {
+        moveCircles()
+    }, 7000)
+
+    moveCircles()
+    onScroll()
+    
+    MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+    new MutationObserver(() => {
+        $("[hint-text]").off("mouseenter")
+        $("[hint-text]").off("mouseleave")
+
+        $("[hint-text]").on("mouseenter", function() {
+            const text = $(this).attr("hint-text")
+
+            $(".hover-message").remove()
+
+            $("body").append(`
+                <div class="hover-message">${text}</div>
+            `)
+
+            const position = $(this).offset()
+            const element = $(".hover-message")
+
+            element.css("left", Math.min(Math.max(position.left - element.width() / 2 + $(this).width() / 2 - 5, 0), $(window).width() - element.width() - 10))
+            element.css("top", position.top - element.height() - 20)
+        })
+
+        $("[hint-text]").on("mouseleave", function() {
+            const element = $(".hover-message")
+            element.css("animation", "disappear 0.25s ease")
+            setTimeout(() => {
+                element.remove()
+            }, 250)
+        })
+    }).observe(document, {subtree: true, childList: true});
+})

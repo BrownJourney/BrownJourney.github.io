@@ -2,27 +2,222 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Loading screen</title>
+    <title>ПРОСТО.САЙТ</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body>
-    <div class="background-image">
-        <img src="./images/background.png" alt="background">
+<body class="">
+    <div class="overlay">
+        <div class="overlay__container">
+            <div class="overlay__container-title">&lt;/&gt;<br>Настройки</div>
+            <div class="overlay__container-block">
+                <div class="overlay__container-setting">
+                    <div class="overlay__container-setting-title">
+                        Визуальная тема страницы
+                    </div>
+
+                    <div class="overlay__container-setting-option">
+                        <div class="setting__switch">
+                            <div class="setting__switch-left"></div>
+                            <div class="setting__switch-right"></div>
+                            <div class="setting__switch-tracker"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overlay__footer">
+                <div class="overlay__footer-close">закрыть</div>
+            </div>
+        </div>
     </div>
-    
-    <div class="container">
-        <div class="title-info">
-            <h1 class="server-name"></h1>
-            <div class="server-desc">Roleplay сервер во вселенной SCP</div>
+
+    <div class="circle-wrapper">
+        <div class="circle" id="circle-1"></div>
+        <div class="circle" id="circle-2"></div>
+        <div class="circle" id="circle-3"></div>
+    </div>
+
+    <div class="settings"></div>
+
+    <div class="header">
+        <div class="header__title">
+            <span class="header__title-bold">просто</span>
+            <span class="header__title-default">веб-сайт</span>
         </div>
 
-        <footer class="footer">
-            <div class="loading-status">Connecting to the server...</div>
-            <div class="loading-bar"></div>
-        </footer>
+        <nav class="header__nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">обо мне</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#stack" class="nav__link">технологии</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#portfolio" class="nav__link">портфолио</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- <div class="settings"></div> -->
     </div>
-    <script src="./app.js" charset="utf-8"></script>
+
+    <div class="wrapper">
+        <section class="section" link="about">
+            <div class="section__title">обо мне</div>
+            <div class="section__container">
+                <span class="container__text text-after-fullstack">
+                    Здравствуйте, меня зовут <b>Даниил</b>, мне <b>20 лет</b> и я люблю <b>программирование</b>. Начал я свое путешествие в этот мир с написания модов для игр на Lua. Далее я начал писать различные парсеры при помощи Python. Сейчас я активно вовлечен в веб-разработку в качестве
+                </span>
+
+                <span class="container__text">
+                    <br>Получаю высшее образование в МГУТУ.<br>Я креативный, энергичный и целеустромленный человек.
+                </span>
+            </div>
+        </section>
+
+        <section class="section" link="stack">
+            <div class="section__title">технологии</div>
+            <div class="section__container container__nopadding">
+                <div class="container__row">
+                    <div class="container__stack-image" hint-text="HTML5">
+                        <img src="./images/stack/html.png" alt="stack image">
+                    </div>
+                    <div class="container__stack-image" hint-text="CSS3">
+                        <img src="./images/stack/css.png" alt="stack image">
+                    </div>
+                    <div class="container__stack-image" hint-text="JavaScript (ES6)">
+                        <img src="./images/stack/js.png" alt="stack image">
+                    </div>
+                    <div class="container__stack-image" hint-text="JQuery">
+                        <img src="./images/stack/jquery.png" alt="stack image">
+                    </div>
+                    <div class="container__stack-image" hint-text="Node.JS">
+                        <img src="./images/stack/node.png" alt="stack image">
+                    </div>
+                    <div class="container__stack-image" hint-text="MongoDB (Mongoose)">
+                        <img src="./images/stack/mongo.png" alt="stack image">
+                    </div>
+                    <div class="container__stack-image" hint-text="Figma">
+                        <img src="./images/stack/figma.png" alt="stack image">
+                    </div>
+                    <div class="container__stack-image" hint-text="Python">
+                        <img src="./images/stack/python.png" alt="stack image">
+                    </div>
+                    <div class="container__stack-image" hint-text="Lua (GLua)">
+                        <img src="./images/stack/lua.png" alt="stack image">
+                    </div>
+                    <div class="container__stack-image" hint-text="Pug">
+                        <img src="./images/stack/pug.png" alt="stack image">
+                    </div>
+                    <div class="container__stack-image" hint-text="SCSS (SaSS)">
+                        <img src="./images/stack/scss.png" alt="stack image">
+                    </div>
+                </div>
+
+                <div class="container__footer">
+                    <div class="container__footer-text">Общий опыт разработки: больше двух лет</div>
+                    <div class="container__footer-text">Опыт коммерческой разработки: 5 месяцев</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" link="portfolio">
+            <div class="section__title">портфолио</div>
+            <div class="section__container">
+                <div class="portfolio">
+                    <div class="portfolio__header">
+                        <div class="portfolio__header-title">DealCenter</div>
+                        <div class="portfolio__header-tech">
+                            <div class="portfolio__header-img">
+                                <img src="./images/stack/js.png" alt="stack image">
+                            </div>
+                            <div class="portfolio__header-img">
+                                <img src="./images/stack/node.png" alt="stack image">
+                            </div>
+                            <div class="portfolio__header-img">
+                                <img src="./images/stack/jquery.png" alt="stack image">
+                            </div>
+                            <div class="portfolio__header-img">
+                                <img src="./images/stack/mongo.png" alt="stack image">
+                            </div>
+                            <div class="portfolio__header-img">
+                                <img src="./images/stack/html.png" alt="stack image">
+                            </div>
+                            <div class="portfolio__header-img">
+                                <img src="./images/stack/pug.png" alt="stack image">
+                            </div>
+                            <div class="portfolio__header-img">
+                                <img src="./images/stack/css.png" alt="stack image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="container__text text-display">Крупный портал, объединяющий процесс создания и рассчитывания кредитов вместе с платежной частью, равно как и позволяет создавать и взаимодействовать с клиентами и автотранспортом.<br><br>В ходе работы над данным проектом я получил огромный опыт над:
+                        <ul class="container__text-list text-display">
+                            <li>Созданием гибкого и удобного CRM интерфейса</li>
+                            <li>Разработкой серверной части (node express)</li>
+                            <li>Системой авторизации клиентов (node passport local strategy)</li>
+                            <li>Проектированием и оптимизацией моделей крупных баз данных (Mongo DB + Mongoose)</li>
+                            <li>Интеграцией API различных платформ (Monday, Plaid, Stripe, Trello, JD Power, DocuSign)</li>
+                            <li>Разработкой собственных суб-модулей и инструментов (автозаполнение PDF контрактов на базе pdf-lib, планирование платежей по графику погашения кредита)</li>
+                        </ul>
+                    </span>
+
+                    <div class="image-preview">
+                        <img class="image-preview-img" src="./images/dealcenter.png" alt="image preview">
+                        <div class="image-preview-footer text-display">
+                            Главная страница платформы
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio">
+                    <div class="portfolio__header">
+                        <div class="portfolio__header-title">Prosecution</div>
+                        <div class="portfolio__header-tech">
+                            <div class="portfolio__header-img">
+                                <img src="./images/stack/lua.png" alt="stack image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <span class="container__text text-display">Одиночный сюжетный мод, выполненный на основе Garry’s Mod на языке Lua. У меня давно была идея сделать что-то подобное на малом уровне, и большинство затей я реализовал в данном режиме. Да, у него есть некоторые проблемы с геймдизайном, однако я считаю этот мод весьма хорошим.</span>
+                    <div class="image-preview">
+                        <iframe class="image-preview-video" src="https://www.youtube.com/embed/mrttOcG5H3E" frameborder="0"></iframe>
+                        <div class="image-preview-footer text-display">
+                            Ролик на YouTube об игре
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__socials">
+            <a href="https://vk.com/brownjour" target="_blank">
+                <div class="footer__socials-img">
+                    <img src="./images/socials/vk.png" alt="vk">
+                </div>
+            </a>
+
+            <a href="https://github.com/BrownJourney" target="_blank">
+                <div class="footer__socials-img">
+                    <img src="./images/socials/gh.png" alt="vk">
+                </div>
+            </a>
+
+            <a href="https://www.youtube.com/channel/UCX4fDP6jZEb-WmJaf4dwkEA" target="_blank">
+                <div class="footer__socials-img">
+                    <img src="./images/socials/yt.png" alt="vk">
+                </div>
+            </a>
+        </div>
+    </footer>
+
+    <script src="./app.js"></script>
 </body>
 </html>
