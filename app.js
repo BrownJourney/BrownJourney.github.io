@@ -14,7 +14,7 @@ $(document).ready(() => {
         })
     }
 
-    const elements = $(".section, .section__container, .portfolio, .container__text, .portfolio__header-title")
+    const elements = $(".section, .portfolio, .container__text, .portfolio__header-title, .image-preview")
 
     elements.each(function() {
         $(this).css("opacity", "0")
@@ -58,7 +58,7 @@ $(document).ready(() => {
                 return
             }
 
-            if ((scrollTop + $(window).height() * 0.5) >= $(this).offset().top) {
+            if ((scrollTop + $(window).height() * 0.75) >= $(this).offset().top) {
                 if (specialClass) {
                     $(this).addClass(specialClass)
                 } else {
@@ -67,19 +67,6 @@ $(document).ready(() => {
                 $(this).animate({
                     opacity: 1,
                 }, 250)
-
-                // if ($(this).attr("class").search("text-display") !== -1) {
-                //     const text = $(this).html()
-                //     $(this).html("")
-                //     let i = 0
-                //     let typeText = setInterval(() => {
-                //         i = i + 1
-                //         $(this).html(text.substring(0, i))
-                //         if (i >= text.length) {
-                //             clearInterval(typeText)
-                //         }
-                //     }, 10)
-                // }
             }
         })
     }
@@ -113,10 +100,6 @@ $(document).ready(() => {
         $("[hint-text]").off("mouseleave")
 
         $("[hint-text]").on("mouseenter", function() {
-            if ($(this).css("display") === "none") {
-                return
-            }
-            
             const text = $(this).attr("hint-text")
 
             $(".hover-message").remove()
