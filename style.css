@@ -568,6 +568,9 @@ img {
     top: auto;
     bottom: 10px;
   }
+  .settings-move {
+    filter: brightness(0);
+  }
   .overlay__container-setting-title {
     font-size: 12px;
   }

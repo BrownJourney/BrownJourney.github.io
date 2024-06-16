@@ -646,6 +646,10 @@ img {
         opacity: 0.75;
         top: auto;
         bottom: 10px;
+
+        &-move {
+            filter: brightness(0);
+        }
     }
 
     .overlay {
