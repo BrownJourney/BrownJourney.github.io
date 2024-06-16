@@ -68,18 +68,18 @@ $(document).ready(() => {
                     opacity: 1,
                 }, 250)
 
-                if ($(this).attr("class").search("text-display") !== -1) {
-                    const text = $(this).html()
-                    $(this).html("")
-                    let i = 0
-                    let typeText = setInterval(() => {
-                        i = i + 1
-                        $(this).html(text.substring(0, i))
-                        if (i >= text.length) {
-                            clearInterval(typeText)
-                        }
-                    }, 10)
-                }
+                // if ($(this).attr("class").search("text-display") !== -1) {
+                //     const text = $(this).html()
+                //     $(this).html("")
+                //     let i = 0
+                //     let typeText = setInterval(() => {
+                //         i = i + 1
+                //         $(this).html(text.substring(0, i))
+                //         if (i >= text.length) {
+                //             clearInterval(typeText)
+                //         }
+                //     }, 10)
+                // }
             }
         })
     }
@@ -113,6 +113,10 @@ $(document).ready(() => {
         $("[hint-text]").off("mouseleave")
 
         $("[hint-text]").on("mouseenter", function() {
+            if ($(this).css("display") === "none") {
+                return
+            }
+            
             const text = $(this).attr("hint-text")
 
             $(".hover-message").remove()
