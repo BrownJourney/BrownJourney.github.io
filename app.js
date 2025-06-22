@@ -2,7 +2,14 @@ function main() {
     const popup = $("#popup")
 
     function isZooming(){
-        const zoomScale = document.documentElement.clientWidth / 2560
+        const width = document.documentElement.clientWidth
+        const zoomScale = width / 2560
+
+        if (width < 400) {
+            $("body").css("zoom", "")
+            return
+        }
+
         $("body").css("zoom", zoomScale)
         if (popup.length > 0) {
             popup.css("height", ($(window).height() / zoomScale) + "px")

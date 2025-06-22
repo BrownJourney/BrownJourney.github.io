@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Unbounded:wght@200..900&display=swap');
 
+@import 'media';
+
 body {
     font-family: "Manrope", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 $border-radius: 40px;
@@ -244,7 +249,7 @@ img {
     &__chip {
         background-color: #272727;
         width: fit-content;
-        border-radius: 40px;
+        border-radius: $border-radius;
         padding: 25px 60px;
         opacity: 0.6;
         text-wrap: nowrap;
@@ -361,7 +366,7 @@ img {
     padding: 30px 30px;
     min-width: 300px;
     text-align: center;
-    border-radius: 40px;
+    border-radius: $border-radius;
     font-size: 20px;
     font-weight: 500;
     transition: all 0.25s ease;
@@ -668,3 +673,63 @@ img {
 }
 
 // CASE STYLE
+
+@media only screen and (max-width: 1300px) {
+    $border-radius: 20px;
+    .wrapper {
+        margin: 10px;
+    }
+
+    img {
+        border-radius: $border-radius;
+    }
+
+    .banner {
+        border-radius:  $border-radius;
+        padding: 10px;
+        flex-direction: column;
+        gap: 0;
+
+        &__section {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        &__photo {
+            border-radius: $border-radius;
+            width: 100%;
+            max-height: 80vw;
+            overflow: hidden;
+        }
+
+        &__info {
+            padding: 15px;
+            width: calc(100% - 30px);
+            gap: 20px;
+
+            &-title {
+                margin-top: 20px;
+                text-wrap: wrap;
+                font-size: 20px;
+            }
+
+            &-subtitle, &-text {
+                font-size: 13px;
+            }
+        }
+
+        &__section &__chips {
+            display: none;
+        }
+
+        &__cta {
+            flex-direction: column;
+        }
+    }
+
+    .btn {
+        min-width: auto;
+        font-size: 14px;
+        padding: 20px 0;
+    }
+}

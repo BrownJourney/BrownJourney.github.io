@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Unbounded:wght@200..900&display=swap");
 body {
   font-family: "Manrope", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 img {
@@ -564,4 +567,53 @@ img {
 .popup__header-close:hover {
   opacity: 1;
   transform: rotate(360deg);
+}
+
+@media only screen and (max-width: 1300px) {
+  .wrapper {
+    margin: 10px;
+  }
+  img {
+    border-radius: 20px;
+  }
+  .banner {
+    border-radius: 20px;
+    padding: 10px;
+    flex-direction: column;
+    gap: 0;
+  }
+  .banner__section {
+    width: 100%;
+    flex-direction: column;
+  }
+  .banner__photo {
+    border-radius: 20px;
+    width: 100%;
+    max-height: 80vw;
+    overflow: hidden;
+  }
+  .banner__info {
+    padding: 15px;
+    width: calc(100% - 30px);
+    gap: 20px;
+  }
+  .banner__info-title {
+    margin-top: 20px;
+    text-wrap: wrap;
+    font-size: 20px;
+  }
+  .banner__info-subtitle, .banner__info-text {
+    font-size: 13px;
+  }
+  .banner__section .banner__chips {
+    display: none;
+  }
+  .banner__cta {
+    flex-direction: column;
+  }
+  .btn {
+    min-width: auto;
+    font-size: 14px;
+    padding: 20px 0;
+  }
 }/*# sourceMappingURL=style.css.map */
