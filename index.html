@@ -3,264 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ПРОСТО.САЙТ</title>
-    <link rel="stylesheet" href="./style.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Анастасия Филимонова</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
-<body class="">
-    <div class="overlay">
-        <div class="overlay__container">
-            <div class="overlay__container-title">&lt;/&gt;<br>Настройки</div>
-            <div class="overlay__container-block">
-                <div class="overlay__container-setting">
-                    <div class="overlay__container-setting-title">
-                        Визуальная тема страницы
-                    </div>
-
-                    <div class="overlay__container-setting-option">
-                        <div class="setting__switch">
-                            <div class="setting__switch-left"></div>
-                            <div class="setting__switch-right"></div>
-                            <div class="setting__switch-tracker"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="overlay__footer">
-                <div class="overlay__footer-close">закрыть</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="settings"></div>
-
-    <div class="header">
-        <div class="header__title">
-            <span class="header__title-bold">просто</span>
-            <span class="header__title-default">веб-сайт</span>
-        </div>
-
-        <nav class="header__nav">
-            <ul class="nav__list">
-                <li class="nav__item">
-                    <a href="#about" class="nav__link">обо мне</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#stack" class="nav__link">технологии</a>
-                </li>
-                <li class="nav__item">
-                    <a href="#portfolio" class="nav__link">портфолио</a>
-                </li>
-            </ul>
-        </nav>
-
-        <!-- <div class="settings"></div> -->
-    </div>
-
+<body>
     <div class="wrapper">
-        <section class="section" link="about">
-            <div class="section__title">обо мне</div>
-            <div class="section__container">
-                <span class="container__text text-after-fullstack">
-                    Здравствуйте, меня зовут <b>Даниил</b>, мне <b>21 год</b> и я люблю <b>программирование</b>. Начал я свое путешествие в этот мир с написания модов для игр на Lua. Далее я начал писать различные парсеры при помощи <b>Python</b>. Сейчас я активно вовлечен в веб-разработку в качестве
-                </span>
-
-                <span class="container__text">
-                    <br>В данный момент получаю высшее образование и работаю.<br>
-                </span>
-            </div>
-        </section>
-
-        <section class="section" link="stack">
-            <div class="section__title">технологии</div>
-            <div class="section__container container__nopadding">
-                <div class="container__row">
-                    <div class="container__stack-image" hint-text="HTML5">
-                        <img src="./images/stack/html.png" alt="stack image">
-                    </div>
-                    <div class="container__stack-image" hint-text="CSS3">
-                        <img src="./images/stack/css.png" alt="stack image">
-                    </div>
-                    <div class="container__stack-image" hint-text="JavaScript (ES6)">
-                        <img src="./images/stack/js.png" alt="stack image">
-                    </div>
-                    <div class="container__stack-image" hint-text="JQuery">
-                        <img src="./images/stack/jquery.png" alt="stack image">
-                    </div>
-                    <div class="container__stack-image" hint-text="Node.JS">
-                        <img src="./images/stack/node.png" alt="stack image">
-                    </div>
-                    <div class="container__stack-image" hint-text="MongoDB (Mongoose)">
-                        <img src="./images/stack/mongo.png" alt="stack image">
-                    </div>
-                    <div class="container__stack-image" hint-text="Figma">
-                        <img src="./images/stack/figma.png" alt="stack image">
-                    </div>
-                    <div class="container__stack-image" hint-text="Python">
-                        <img src="./images/stack/python.png" alt="stack image">
-                    </div>
-                    <div class="container__stack-image" hint-text="Lua (GLua)">
-                        <img src="./images/stack/lua.png" alt="stack image">
-                    </div>
-                    <div class="container__stack-image" hint-text="Pug">
-                        <img src="./images/stack/pug.png" alt="stack image">
-                    </div>
-                    <div class="container__stack-image" hint-text="SCSS (SaSS)">
-                        <img src="./images/stack/scss.png" alt="stack image">
-                    </div>
-                    <div class="container__stack-image" hint-text="React">
-                        <img src="./images/stack/react.png" alt="stack image">
-                    </div>
-                    <div class="container__stack-image" hint-text="Next.JS">
-                        <img src="./images/stack/next.png" alt="stack image">
-                    </div>
-                    <div class="container__stack-image" hint-text="nginx">
-                        <img src="./images/stack/nginx.png" alt="stack image">
-                    </div>
-                    <div class="container__stack-image" hint-text="webpack 5.0">
-                        <img src="./images/stack/webpack.png" alt="stack image">
-                    </div>
+        <section class="banner --cta">
+            <div class="banner__section">
+                <div class="banner__photo">
+                    <img src="./public/me.jpg" alt="Фото Анастасии">
                 </div>
 
-                <div class="container__footer">
-                    <div class="container__footer-text">Общий опыт разработки: больше двух лет</div>
-                    <div class="container__footer-text">Опыт коммерческой разработки: 1 год</div>
+                <div class="banner__info">
+                    <div class="banner__info-title">Анастасия Филимонова</div>
+                    <div class="banner__info-subtitle">Я дизайнер с 4-летним опытом работы, специализируюсь на&nbsp;разработке дизайна для&nbsp;сайтов и мобильных приложений</div>
+
+                    <div class="banner__info-text">Работала в более, чем 20 сферах бизнеса: образование, туризм, юридические услуги, ритейл, благотворительность и другие. Получаю образование в&nbsp;сфере дизайна маркетинговых коммуникаций в&nbsp;колледже информационных и&nbsp;креативных технологий IThub, учусь дизайну в&nbsp;студии Артемия Лебедева. Сочетая творческий подход с&nbsp;аналитикой, создаю эффективные дизайн-решения, которые учитывают потребности бизнеса и&nbsp;целевой аудитории</div>
+                    
+                    <div class="banner__cta">
+                        <div class="btn">Связаться в ТГ</div>
+                        <div class="btn --secondary">Скачать резюме</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="banner__section">
+                <div class="banner__chips">
+                    <div class="banner__chip">Дизайн сайтов</div>
+                    <div class="banner__chip">Дизайн мобильных приложений</div>
+                    <div class="banner__chip">Брендинг</div>
+                    <div class="banner__chip">Аналатика</div>
+                    <div class="banner__chip">Анализ ЦА</div>
+                    <div class="banner__chip">UX/UI</div>
+                    <div class="banner__chip">Анализ конкурентов</div>
+                    <div class="banner__chip">Разработка сайтов на Tilda</div>
+                    <div class="banner__chip">Персоны</div>
+                    <div class="banner__chip">CJM</div>
+                    <div class="banner__chip">Спонтанность</div>
                 </div>
             </div>
         </section>
 
-        <section class="section" link="portfolio">
-            <div class="section__title">портфолио</div>
-            <div class="section__container">
-                <div class="portfolio">
-                    <div class="portfolio__header">
-                        <div class="portfolio__header-title">DealCenter</div>
-                        <div class="portfolio__header-tech">
-                            <div class="portfolio__header-img">
-                                <img src="./images/stack/js.png" alt="stack image">
-                            </div>
-                            <div class="portfolio__header-img">
-                                <img src="./images/stack/node.png" alt="stack image">
-                            </div>
-                            <div class="portfolio__header-img">
-                                <img src="./images/stack/jquery.png" alt="stack image">
-                            </div>
-                            <div class="portfolio__header-img">
-                                <img src="./images/stack/mongo.png" alt="stack image">
-                            </div>
-                            <div class="portfolio__header-img">
-                                <img src="./images/stack/html.png" alt="stack image">
-                            </div>
-                            <div class="portfolio__header-img">
-                                <img src="./images/stack/pug.png" alt="stack image">
-                            </div>
-                            <div class="portfolio__header-img">
-                                <img src="./images/stack/css.png" alt="stack image">
-                            </div>
-                            <div class="portfolio__header-img">
-                                <img src="./images/stack/nginx.png" alt="stack image">
-                            </div>
-                            <div class="portfolio__header-img">
-                                <img src="./images/stack/webpack.png" alt="stack image">
-                            </div>
+        <section class="banner" style="margin-top: 40px;">
+            <div class="banner__section">
+                <div class="banner__info-title"><span class="text__grey">4 года в дизайне, </span>10+ сфер бизнеса</div>
+            </div>
+            <div class="banner__section">
+                <div class="tabs">
+                    <div class="tabs__item --active">Все работы</div>
+                    <div class="tabs__item">Сайты</div>
+                    <div class="tabs__item">Приложения</div>
+                    <div class="tabs__item">Лого</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="projects__item" href="./inna.html">
+                <div class="projects__item-background">
+                    <img src="./public/inna.jpg" alt="Инна Тур">
+                </div>
+
+                <div class="projects__item-hover">
+                    <div class="projects__banner">
+                        <div class="projects__item-text">
+                            <div class="projects__item-title">Инна Тур</div>
+                            <div class="projects__item-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae, quis voluptates dolores perspiciatis porro est atque, velit labore autem repudiandae eveniet repellat suscipit eius tempore nostrum! Accusantium, ipsa ab!</div>
                         </div>
-                    </div>
 
-                    <span class="container__text text-display">Крупный портал, объединяющий процесс создания и рассчитывания кредитов вместе с платежной частью, равно как и позволяет создавать и взаимодействовать с клиентами и автотранспортом.<br><br>В ходе работы над данным проектом я получил огромный опыт над:
-                        <ul class="container__text-list text-display">
-                            <li>Созданием гибкого и удобного CRM интерфейса</li>
-                            <li>Разработкой серверной части (node express)</li>
-                            <li>Системой авторизации клиентов (node passport local strategy)</li>
-                            <li>Проектированием и оптимизацией моделей крупных баз данных (Mongo DB + Mongoose)</li>
-                            <li>Интеграцией API различных платформ (Monday, Plaid, Stripe, Trello, JD Power, DocuSign)</li>
-                            <li>Разработкой собственных суб-модулей и инструментов (автозаполнение PDF контрактов на базе pdf-lib, планирование платежей по графику погашения кредита)</li>
-                        </ul>
-                    </span>
-
-                    <div class="image-preview">
-                        <img class="image-preview-img" src="./images/dealcenter.png" alt="image preview">
-                        <div class="image-preview-footer text-display">
-                            Главная страница платформы
+                        <div class="projects__banner-link">
+                            <div class="projects__banner-icon"></div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="portfolio">
-                    <div class="portfolio__header">
-                        <div class="portfolio__header-title">VehicleInspections</div>
-                        <div class="portfolio__header-tech">
-                            <div class="portfolio__header-img">
-                                <img src="./images/stack/react.png" alt="stack image">
-                            </div>
-                            <div class="portfolio__header-img">
-                                <img src="./images/stack/next.png" alt="stack image">
-                            </div>
-                            <div class="portfolio__header-img">
-                                <img src="./images/stack/mongo.png" alt="stack image">
-                            </div>
+            <div class="projects__item">
+                <div class="projects__item-background">
+                    <img src="./public/isla.jpg" alt="Инна Тур">
+                </div>
+
+                <div class="projects__item-hover">
+                    <div class="projects__banner">
+                        <div class="projects__item-text">
+                            <div class="projects__item-title">Isla De Libre</div>
+                            <div class="projects__item-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae, quis voluptates dolores perspiciatis porro est atque, velit labore autem repudiandae eveniet repellat suscipit eius tempore nostrum! Accusantium, ipsa ab!</div>
                         </div>
-                    </div>
 
-                    <span class="container__text">Удобная платформа для быстрых автоинспекций, которую можно получить за 15 минут благодаря онлайн-проверке. Сайт создан с использованием Next.js, фронтенд выполнен на React с функциональным подходом. На сайте также сделана специальная админ-панель, через которую можно отслеживать все заказы и решать возникающие проблемы с удобством.</span>
-
-                    <div class="image-preview --fit-content">
-                        <img class="image-preview-img" src="./images/vehicleinspections.png" alt="image preview">
-                        <div class="image-preview-footer text-display">
-                            Форма для инспекции
+                        <div class="projects__banner-link">
+                            <div class="projects__banner-icon"></div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="portfolio">
-                    <div class="portfolio__header">
-                        <div class="portfolio__header-title">Prosecution</div>
-                        <div class="portfolio__header-tech">
-                            <div class="portfolio__header-img">
-                                <img src="./images/stack/lua.png" alt="stack image">
-                            </div>
+            <div class="projects__item">
+                <div class="projects__item-background">
+                    <img src="./public/asante.jpg" alt="Инна Тур">
+                </div>
+
+                <div class="projects__item-hover">
+                    <div class="projects__banner">
+                        <div class="projects__item-text">
+                            <div class="projects__item-title">Asante</div>
+                            <div class="projects__item-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae, quis voluptates dolores perspiciatis porro est atque, velit labore autem repudiandae eveniet repellat suscipit eius tempore nostrum! Accusantium, ipsa ab!</div>
+                        </div>
+
+                        <div class="projects__banner-link">
+                            <div class="projects__banner-icon"></div>
                         </div>
                     </div>
+                </div>
+            </div>
+            
+            <div class="projects__item">
+                <div class="projects__item-background">
+                    <img src="./public/novograd.jpg" alt="Инна Тур">
+                </div>
 
-                    <span class="container__text text-display">Одиночный сюжетный мод, выполненный на основе Garry’s Mod на языке Lua. У меня давно была идея сделать что-то подобное на малом уровне, и большинство затей я реализовал в данном режиме. Да, у него есть некоторые проблемы с геймдизайном, однако я считаю этот мод весьма хорошим.</span>
-                    <div class="image-preview">
-                        <iframe class="image-preview-video" src="https://www.youtube.com/embed/mrttOcG5H3E" frameborder="0"></iframe>
-                        <div class="image-preview-footer text-display">
-                            Ролик на YouTube об игре
+                <div class="projects__item-hover">
+                    <div class="projects__banner">
+                        <div class="projects__item-text">
+                            <div class="projects__item-title">Новоград</div>
+                            <div class="projects__item-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae, quis voluptates dolores perspiciatis porro est atque, velit labore autem repudiandae eveniet repellat suscipit eius tempore nostrum! Accusantium, ipsa ab!</div>
                         </div>
+
+                        <div class="projects__banner-link">
+                            <div class="projects__banner-icon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects__item">
+                <div class="projects__item-background">
+                    <img src="./public/vozduhus.jpg" alt="Инна Тур">
+                </div>
+
+                <div class="projects__item-hover">
+                    <div class="projects__banner">
+                        <div class="projects__item-text">
+                            <div class="projects__item-title">Воздухус</div>
+                            <div class="projects__item-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae, quis voluptates dolores perspiciatis porro est atque, velit labore autem repudiandae eveniet repellat suscipit eius tempore nostrum! Accusantium, ipsa ab!</div>
+                        </div>
+
+                        <div class="projects__banner-link">
+                            <div class="projects__banner-icon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects__item">
+                <div class="projects__item-background">
+                    <img src="./public/global.jpg" alt="Инна Тур">
+                </div>
+
+                <div class="projects__item-hover">
+                    <div class="projects__banner">
+                        <div class="projects__item-text">
+                            <div class="projects__item-title">Global</div>
+                            <div class="projects__item-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae, quis voluptates dolores perspiciatis porro est atque, velit labore autem repudiandae eveniet repellat suscipit eius tempore nostrum! Accusantium, ipsa ab!</div>
+                        </div>
+
+                        <div class="projects__banner-link">
+                            <div class="projects__banner-icon"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="banner">
+            <div class="pagination">
+                <div class="pagination__item --active">1</div>
+                <div class="pagination__item">2</div>
+                <div class="pagination__item">3</div>
+            </div>
+        </section>
+
+        <section class="banner --cta" style="justify-content: center;">
+            <div class="banner__section">
+                <div class="banner__info --center">
+                    <div class="banner__info-title">Давайте обсудим<br>детали шлепков по попе</div>
+                    <div class="banner__info-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error libero voluptatem maxime salamd adjfgj ada zsadda.</div>
+                    
+                    <div class="banner__cta">
+                        <div class="btn">Связаться в ТГ</div>
                     </div>
                 </div>
             </div>
         </section>
     </div>
-
-    <footer class="footer">
-        <div class="footer__socials">
-            <a href="https://vk.com/brownjour" target="_blank">
-                <div class="footer__socials-img">
-                    <img src="./images/socials/vk.png" alt="vk">
-                </div>
-            </a>
-
-            <a href="https://github.com/BrownJourney" target="_blank">
-                <div class="footer__socials-img">
-                    <img src="./images/socials/gh.png" alt="vk">
-                </div>
-            </a>
-
-            <a href="https://www.youtube.com/channel/UCX4fDP6jZEb-WmJaf4dwkEA" target="_blank">
-                <div class="footer__socials-img">
-                    <img src="./images/socials/yt.png" alt="vk">
-                </div>
-            </a>
+    
+    <div class="popup" id="popup">
+        <div class="popup__header">
+            <div class="popup__header-close" id="popup-close"></div>
         </div>
-    </footer>
-<!-- 
-    <div class="circle-wrapper">
-        <div class="circle" id="circle-1"></div>
-        <div class="circle" id="circle-2"></div>
-        <div class="circle" id="circle-3"></div>
-    </div> -->
+        <div class="popup__content">
+            <iframe src="./inna.html" frameborder="0" class="popup__content-iframe"></iframe>
+        </div>
+        <div class="popup__footer"></div>
+    </div>
 
     <script src="./app.js"></script>
 </body>
