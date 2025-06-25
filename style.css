@@ -132,6 +132,9 @@ img {
   font-weight: 600;
   text-wrap: nowrap;
 }
+.banner__info-title.--margin {
+  margin-top: 40px;
+}
 .banner__info-subtitle, .banner__info-text {
   font-size: 24px;
 }
@@ -478,6 +481,9 @@ img {
   align-items: center;
 }
 .tabs__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0.5;
   font-size: 24px;
   font-weight: 500;
@@ -569,9 +575,13 @@ img {
   transform: rotate(360deg);
 }
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: #fafafa;
+  }
   .wrapper {
     margin: 10px;
+    gap: 10px;
   }
   img {
     border-radius: 20px;
@@ -597,10 +607,18 @@ img {
     width: calc(100% - 30px);
     gap: 20px;
   }
+  .banner__info.--center {
+    padding: 80px 15px;
+  }
   .banner__info-title {
     margin-top: 20px;
     text-wrap: wrap;
-    font-size: 20px;
+    font-size: 22px;
+    display: flex;
+    flex-direction: column;
+  }
+  .banner__info-title.--margin {
+    margin-top: 30px;
   }
   .banner__info-subtitle, .banner__info-text {
     font-size: 13px;
@@ -609,11 +627,69 @@ img {
     display: none;
   }
   .banner__cta {
+    width: 100%;
     flex-direction: column;
+  }
+  .tabs {
+    display: none;
+    margin-top: 10px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+  }
+  .tabs__item {
+    font-size: 16px;
+    min-width: 100px;
+  }
+  .projects {
+    margin-top: 20px;
+    flex-flow: column nowrap;
+  }
+  .projects__banner {
+    --text-padding: 20px;
+    width: calc(100% - var(--text-padding) * 2);
+    left: 0;
+    bottom: 0;
+    border-radius: 20px;
+  }
+  .projects__banner-link {
+    min-width: 48px;
+    min-height: 48px;
+  }
+  .projects__banner-icon {
+    width: 48px;
+    height: 48px;
+    background-size: 16px;
+  }
+  .projects__item {
+    overflow: visible;
+    width: 100%;
+    margin-bottom: 120px;
+  }
+  .projects__item-text {
+    gap: 10px;
+  }
+  .projects__item-title {
+    font-size: 18px;
+  }
+  .projects__item-desc {
+    font-size: 12px;
+    opacity: 1;
+  }
+  .projects__item-hover {
+    background: none;
+    opacity: 1;
+    transform: translateY(120px);
+  }
+  .projects__item-background img {
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .btn {
     min-width: auto;
     font-size: 14px;
     padding: 20px 0;
+  }
+  .pagination {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */

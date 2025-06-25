@@ -164,6 +164,10 @@ img {
             font-family: "Unbounded", sans-serif;
             font-weight: 600;
             text-wrap: nowrap;
+
+            &.--margin {
+                margin-top: 40px;
+            }
         }
 
         &-subtitle, &-text {
@@ -571,6 +575,9 @@ img {
     align-items: center;
 
     &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         opacity: 0.5;
         font-size: $standart-text-size;
         font-weight: 500;
@@ -674,10 +681,18 @@ img {
 
 // CASE STYLE
 
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 600px) {
     $border-radius: 20px;
+    $standart-text-size: 12px;
+    $link-size: 48px;
+
+    body {
+        background-color: #fafafa;
+    }
+
     .wrapper {
         margin: 10px;
+        gap: 10px;
     }
 
     img {
@@ -707,10 +722,20 @@ img {
             width: calc(100% - 30px);
             gap: 20px;
 
+            &.--center {
+                padding: 80px 15px;
+            }
+
             &-title {
                 margin-top: 20px;
                 text-wrap: wrap;
-                font-size: 20px;
+                font-size: 22px;
+                display: flex;
+                flex-direction: column;
+
+                &.--margin {
+                    margin-top: 30px;
+                }
             }
 
             &-subtitle, &-text {
@@ -723,7 +748,76 @@ img {
         }
 
         &__cta {
+            width: 100%;
             flex-direction: column;
+        }
+    }
+
+    .tabs {
+        display: none;
+        margin-top: 10px;
+        overflow-x: auto;
+        padding-bottom: 20px;
+
+        &__item {
+            font-size: 16px;
+            min-width: 100px;
+        }
+    }
+
+    .projects {
+        margin-top: 20px;
+        flex-flow: column nowrap;
+
+        &__banner {
+            --text-padding: 20px;
+
+            width: calc(100% - var(--text-padding) * 2);
+            left: 0;
+            bottom: 0;
+            border-radius: $border-radius;
+
+            &-link {
+                min-width: $link-size;
+                min-height: $link-size;
+            }
+
+            &-icon {
+                width: $link-size;
+                height: $link-size;
+                background-size: calc($link-size / 3);
+            }
+        }
+
+        &__item {
+            overflow: visible;
+            width: 100%;
+            margin-bottom: 120px;
+
+            &-text {
+                gap: 10px;
+            }
+            
+            &-title {
+                font-size: 18px;
+            }
+
+            &-desc {
+                font-size: $standart-text-size;
+                opacity: 1;
+            }
+
+            &-hover {
+                background: none;
+                opacity: 1;
+                transform: translateY(120px);
+            }
+            
+            &-background {
+                img {
+                    object-fit: cover;
+                }
+            }
         }
     }
 
@@ -731,5 +825,9 @@ img {
         min-width: auto;
         font-size: 14px;
         padding: 20px 0;
+    }
+
+    .pagination {
+        display: none;
     }
 }
