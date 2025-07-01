@@ -6,11 +6,11 @@ function main() {
         const zoomScale = width / 2560
 
         if (width <= 600) {
-            $("body").css("transform", "")
+            $("body").css("zoom", "")
             return
         }
 
-        $("body").css("transform", `scale(${zoomScale})`)
+        $("body").css("zoom", `${zoomScale}`)
         if (popup.length > 0) {
             popup.css("height", ($(window).height() / zoomScale) + "px")
         }
