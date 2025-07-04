@@ -5,6 +5,7 @@ function main() {
         const width = document.documentElement.clientWidth
         const zoomScale = width / 2560
 
+        console.log($(window).outerWidth())
         if ($(window).outerWidth() <= 1000) {
             $("body").css("zoom", "")
             return

@@ -651,6 +651,7 @@ img {
     left: 0;
     bottom: 0;
     border-radius: 20px;
+    filter: drop-shadow(0 0 4px rgba(20, 20, 20, 0.1));
   }
   .projects__banner-link {
     min-width: 48px;
