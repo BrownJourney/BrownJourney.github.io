@@ -239,7 +239,7 @@ img {
         gap: 25px;
         height: fit-content;
 
-        &.-fill {
+        &.--fill {
             margin-top: 30px;
             justify-content: flex-start;
             min-width: auto;
@@ -687,6 +687,10 @@ img {
     $standart-text-size: 12px;
     $link-size: 48px;
 
+    :root {
+        --resp-padding: 20px;
+    }
+
     body {
         background-color: #fafafa;
     }
@@ -702,7 +706,7 @@ img {
 
     .banner {
         border-radius:  $border-radius;
-        padding: 10px;
+        padding: 0px;
         flex-direction: column;
         gap: 0;
 
@@ -712,23 +716,82 @@ img {
         }
 
         &__photo {
+            margin: var(--resp-padding);
             border-radius: $border-radius;
-            width: 100%;
+            width: calc(100% - var(--resp-padding) * 2);
             max-height: 80vw;
             overflow: hidden;
         }
 
+        &.--target {
+            flex-direction: column-reverse;
+        }
+
+        &__photos {
+            flex-direction: column;
+            gap: 10px;
+
+            &-item {
+                width: 100%;
+
+                &:nth-child(3) {
+                    background-color: auto;
+                }
+            }
+        }
+
+        &__photocards {
+            padding: var(--resp-padding);
+            flex-direction: column;
+
+            &.--huge {
+                padding: var(--resp-padding);
+            }
+
+            &-rows {
+                width: 100%;
+            }
+
+            &-columns {
+                width: 100%;
+            }
+        }
+
         &__info {
-            padding: 15px;
-            width: calc(100% - 30px);
+            padding: var(--resp-padding);
+            width: calc(100% - var(--resp-padding) * 2);
             gap: 20px;
 
             &.--center {
+                width: calc(100% - 30px);
                 padding: 80px 15px;
             }
 
+            &.--small {
+                width: calc(100% - var(--resp-padding) * 2);
+            }
+
+            &.--huge {
+                width: calc(100% - var(--resp-padding) * 2);
+                padding: var(--resp-padding);
+            }
+
+            &.--fill {
+                padding: 60px var(--resp-padding);
+                width: calc(100% - var(--resp-padding) * 2);
+            }
+
+            &.--medium {
+                width: calc(100% - 40px);
+                padding: 20px;
+                transform: none;
+            }
+
+            &.--fill &-title {
+                text-align: center;
+            }
+
             &-title {
-                margin-top: 20px;
                 text-wrap: wrap;
                 font-size: 22px;
                 display: flex;
@@ -742,15 +805,62 @@ img {
             &-subtitle, &-text {
                 font-size: 13px;
             }
+
+            &-target {
+                width: 64px;
+                height: 64px;
+
+                img {
+                    left: -5px;
+                }
+            }
+        }
+
+        &__chips {
+            gap: 10px;
+        }
+
+        &__chip {
+            font-size: 12px;
+            padding: 20px;
         }
 
         &__section &__chips {
             display: none;
+
+            &.--fill {
+                margin-top: 0;
+                display: flex;
+            }
         }
 
         &__cta {
             width: 100%;
             flex-direction: column;
+        }
+
+        &.--case {
+            flex-direction: column-reverse;
+        }
+
+        &.--grey {
+            flex-direction: column;
+        }
+
+        &.--target {
+            gap: 10px;
+        }
+
+        &.--photo-trim {
+            max-height: 2000px;
+        }
+
+        &__column {
+            flex-direction: column-reverse;
+        }
+
+        &__image {
+            height: 30vh;
         }
     }
 
@@ -763,6 +873,32 @@ img {
         &__item {
             font-size: 16px;
             min-width: 100px;
+        }
+    }
+
+    .steps {
+        flex-direction: column;
+        gap: 20px;
+
+        &__step {
+            padding: 20px;
+            width: calc(100% - 40px);
+            max-width: none;
+            gap: 10px;
+
+            &-number {
+                width: 24px;
+                height: 24px;
+                font-size: 18px;
+            }
+
+            &-title {
+                font-size: 20px;
+            }
+
+            &-text {
+                font-size: 14px;
+            }
         }
     }
 
@@ -832,5 +968,54 @@ img {
 
     .pagination {
         display: none;
+    }
+
+    .case {
+        &-video {
+            left: 53%;
+            top: 0;
+
+            width: 67vw;
+            height: 40vw;
+            transform: translate(-50%, 21%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            video {
+                width: 90%;
+                height: 100%;
+            }
+        }
+        &-neighbour {
+            bottom: 0;
+            left: 0;
+            transform: translateX(25%);
+            width: 20vw;
+        }
+        &-image {
+            &__wrapper {
+                transform: none;
+                padding: 30px 40px;
+
+                &.--invert {
+                    transform: none;
+
+                    &:after {
+                        top: 0;
+                        left: 50%;
+                    }
+                }
+
+                &:after {
+                    left: 50%;
+                    top: 0;
+                    width: 120vw;
+                    height: 120vw;
+                    border-radius: 50%;
+                    transform: translate(-50%, -60%);
+                }
+            }   
+        }
     }
 }
