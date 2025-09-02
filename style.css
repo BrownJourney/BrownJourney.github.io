@@ -655,6 +655,10 @@ img {
     padding: var(--resp-padding);
     gap: 10px;
     flex-direction: column;
+    border-radius: 20px;
+  }
+  .banner__photocards.--mobile-row {
+    flex-direction: row;
   }
   .banner__photocards-img.--margin {
     margin-bottom: 0;
@@ -664,17 +668,25 @@ img {
   }
   .banner__photocards-rows {
     width: 100%;
+    gap: 10px;
   }
   .banner__photocards-columns {
     width: 100%;
+    gap: 10px;
   }
   .banner__photocards-wrapper {
     width: 100%;
+  }
+  .banner__photos-item {
+    border-radius: 20px;
   }
   .banner__info {
     padding: var(--resp-padding);
     width: calc(100% - var(--resp-padding) * 2);
     gap: 15px;
+  }
+  .banner__info.--mobile-nopadding {
+    padding-top: 0;
   }
   .banner__info:last-child {
     padding-bottom: 50px;
@@ -697,10 +709,8 @@ img {
   .banner__info.--medium {
     width: calc(100% - 40px);
     padding: 20px;
+    padding-bottom: 50px;
     transform: none;
-  }
-  .banner__info.--fill .banner__info-title {
-    text-align: center;
   }
   .banner__info-title {
     text-wrap: wrap;
@@ -714,7 +724,7 @@ img {
   .banner__info-subtitle, .banner__info-text {
     font-size: 13px;
     text-wrap: balance;
-    line-height: 130%;
+    line-height: 140%;
     display: block;
   }
   .banner__info-target {
@@ -730,6 +740,10 @@ img {
   .banner__chip {
     font-size: 12px;
     padding: 20px;
+  }
+  .banner__chip.--dark-bg {
+    width: 100%;
+    text-align: center;
   }
   .banner__section .banner__chips {
     display: none;
@@ -783,6 +797,7 @@ img {
     width: calc(100% - 40px);
     max-width: none;
     gap: 10px;
+    border-radius: 20px;
   }
   .steps__step-number {
     width: 24px;

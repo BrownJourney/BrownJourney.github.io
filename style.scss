@@ -782,6 +782,11 @@ img {
             padding: var(--resp-padding);
             gap: 10px;
             flex-direction: column;
+            border-radius: 20px;
+
+            &.--mobile-row {
+                flex-direction: row;
+            }
 
             &-img {
                 &.--margin {
@@ -795,10 +800,12 @@ img {
 
             &-rows {
                 width: 100%;
+                gap: 10px;
             }
 
             &-columns {
                 width: 100%;
+                gap: 10px;
             }
 
             &-wrapper {
@@ -806,10 +813,18 @@ img {
             }
         }
 
+        &__photos-item {
+            border-radius: 20px;
+        }
+
         &__info {
             padding: var(--resp-padding);
             width: calc(100% - var(--resp-padding) * 2);
             gap: 15px;
+
+            &.--mobile-nopadding {
+                padding-top: 0;
+            }
 
             &:last-child {
                 padding-bottom: 50px;
@@ -837,11 +852,8 @@ img {
             &.--medium {
                 width: calc(100% - 40px);
                 padding: 20px;
+                padding-bottom: 50px;
                 transform: none;
-            }
-
-            &.--fill &-title {
-                text-align: center;
             }
 
             &-title {
@@ -858,7 +870,7 @@ img {
             &-subtitle, &-text {
                 font-size: 13px;
                 text-wrap: balance;
-                line-height: 130%;
+                line-height: 140%;
                 display: block
             }
 
@@ -879,6 +891,11 @@ img {
         &__chip {
             font-size: 12px;
             padding: 20px;
+
+            &.--dark-bg {
+                width: 100%;
+                text-align: center;
+            }
         }
 
         &__section &__chips {
@@ -948,6 +965,7 @@ img {
             width: calc(100% - 40px);
             max-width: none;
             gap: 10px;
+            border-radius: 20px;
 
             &-number {
                 width: 24px;
