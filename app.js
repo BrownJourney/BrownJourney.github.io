@@ -27,8 +27,8 @@ function main() {
     $(".case-video").each(function() {
         const element = $(this).parent(".case-image__wrapper").children(".case-image")
         const video =  $(this).children("video")
-        video.attr("width", element.outerWidth() * 0.657)
-        video.attr("height", element.outerHeight() * 1.1)
+        video.attr("width", element.outerWidth() * 0.67)
+        video.attr("height", element.outerHeight() * 1.11)
     })
 
     $("#popup-close").on("click", () => {
