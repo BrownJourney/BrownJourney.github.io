@@ -44,7 +44,8 @@ img {
   width: fit-content;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
+  width: 100%;
 }
 .banner.--target {
   gap: 30px;
@@ -99,7 +100,7 @@ img {
 }
 .banner__content-img img {
   width: 1346px;
-  height: 910px;
+  height: 950px;
 }
 .banner__photos {
   display: flex;
@@ -213,7 +214,12 @@ img {
   text-wrap: nowrap;
   font-size: 24px;
 }
+.banner__chip.--dark-bg {
+  opacity: 1;
+  background-color: #10242C;
+}
 .banner__cta {
+  text-decoration: none;
   margin-top: 10px;
   display: flex;
   gap: 10px;
@@ -242,7 +248,7 @@ img {
 .banner__photocards-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
   width: 1100px;
 }
 .banner__photocards-img.--margin {
@@ -279,7 +285,8 @@ img {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 518.25px;
+  width: 414.25px;
+  max-width: 414.25px;
   position: relative;
 }
 .steps__step-number {
@@ -587,6 +594,10 @@ img {
 .popup__header-close:hover {
   opacity: 1;
   transform: rotate(360deg);
+}
+
+.--text-small {
+  width: 800px;
 }
 
 @media only screen and (max-width: 1000px) {

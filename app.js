@@ -20,8 +20,15 @@ function main() {
     $(window).on("resize", isZooming)
     isZooming()
 
-    $(".projects__item").on("click", () => {
+    $(".projects__item[data-popup]").on("click", () => {
         popup.addClass("--active")
+    })
+
+    $(".case-video").each(function() {
+        const element = $(this).parent(".case-image__wrapper").children(".case-image")
+        const video =  $(this).children("video")
+        video.attr("width", element.outerWidth() * 0.657)
+        video.attr("height", element.outerHeight() * 1.1)
     })
 
     $("#popup-close").on("click", () => {

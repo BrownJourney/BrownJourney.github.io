@@ -57,7 +57,8 @@ img {
         width: fit-content;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 30px;
+        width: 100%;
     }
 
     &.--target {
@@ -125,7 +126,7 @@ img {
 
         img {
             width: 1346px;
-            height: 910px;
+            height: 950px;
         }
     }
 
@@ -260,9 +261,15 @@ img {
         opacity: 0.6;
         text-wrap: nowrap;
         font-size: $standart-text-size;
+
+        &.--dark-bg {
+            opacity: 1;
+            background-color: #10242C;
+        }
     }
 
     &__cta {
+        text-decoration: none;
         margin-top: 10px;
         display: flex;
         gap: 10px;
@@ -299,7 +306,7 @@ img {
             display: flex;
             flex-direction:
             column;
-            gap: 20px;
+            gap: 30px;
             width: 1100px;
         }
 
@@ -348,7 +355,9 @@ img {
         display: flex;
         flex-direction: column;
         gap: 20px;
-        max-width: calc((2545px - 42px * 2 - 134px * 2 - 30px * 4) / 4);
+        $width: calc((2545px - 200px * 2 - 68px * 2 - 80px - 68px * 4) / 4);
+        width: $width;
+        max-width: $width;
         position: relative;
 
         &-number {
@@ -696,6 +705,10 @@ img {
             }
         }
     }
+}
+
+.--text-small {
+    width: 800px;
 }
 
 // CASE STYLE
