@@ -629,11 +629,14 @@ img {
     margin: var(--resp-padding);
     border-radius: 20px;
     width: calc(100% - var(--resp-padding) * 2);
-    max-height: 80vw;
     overflow: hidden;
   }
-  .banner.--target {
-    flex-direction: column-reverse;
+  .banner__photo.--stretch {
+    height: 35vh;
+  }
+  .banner__photo img {
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .banner__photos {
     flex-direction: column;
@@ -673,6 +676,9 @@ img {
     width: calc(100% - var(--resp-padding) * 2);
     gap: 15px;
   }
+  .banner__info:last-child {
+    padding-bottom: 50px;
+  }
   .banner__info.--center {
     width: calc(100% - 40px);
     padding: 20px;
@@ -707,6 +713,9 @@ img {
   }
   .banner__info-subtitle, .banner__info-text {
     font-size: 13px;
+    text-wrap: balance;
+    line-height: 130%;
+    display: block;
   }
   .banner__info-target {
     width: 64px;

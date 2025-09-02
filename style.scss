@@ -751,12 +751,15 @@ img {
             margin: var(--resp-padding);
             border-radius: $border-radius;
             width: calc(100% - var(--resp-padding) * 2);
-            max-height: 80vw;
             overflow: hidden;
-        }
 
-        &.--target {
-            flex-direction: column-reverse;
+            &.--stretch {
+                height: 35vh;
+            }
+
+            img {
+                object-fit: cover;
+            }
         }
 
         &__photos {
@@ -808,6 +811,10 @@ img {
             width: calc(100% - var(--resp-padding) * 2);
             gap: 15px;
 
+            &:last-child {
+                padding-bottom: 50px;
+            }
+
             &.--center {
                 width: calc(100% - 40px);
                 padding: 20px;
@@ -850,6 +857,9 @@ img {
 
             &-subtitle, &-text {
                 font-size: 13px;
+                text-wrap: balance;
+                line-height: 130%;
+                display: block
             }
 
             &-target {
