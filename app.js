@@ -34,6 +34,12 @@ function main() {
     $("#popup-close").on("click", () => {
         popup.removeClass("--active")
     })
+
+    $("video").each(function() {
+        this.play().catch(err => {
+            console.log(err)
+        })
+    })
 }
 
 jQuery(() => {
