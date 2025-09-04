@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Unbounded:wght@200..900&display=swap');
 
-@import 'media';
-
 html {
     -webkit-text-size-adjust: 100%;
 }
@@ -722,15 +720,132 @@ img {
 
 // CASE STYLE
 
-@media only screen and (max-width: 500px) {
-    
-}
-
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1366px) {
     $border-radius: 20px;
     $standart-text-size: 12px;
     $link-size: 48px;
 
+    .banner {
+        gap: 30px;
+
+        &__section {
+            width: 100%;
+        }
+
+        &__info {
+            padding: 40px;
+
+            &-title {
+                font-size: 38px;
+            }
+
+            &-subtitle {
+                font-size: 20px;
+            }
+
+            &-text {
+                font-size: 18px;
+            }
+        }
+
+        &__section &__chips {
+            display: none;
+        }
+
+        &__section &__photo {
+            img {
+                object-fit: cover;
+            }
+        }
+    }
+    
+    .btn {
+        font-size: 16px;
+        padding: 20px;
+    }
+
+    .--resp-column {
+        flex-direction: column;
+    }
+
+    .projects {
+        &__banner {
+            --text-padding: 20px;
+
+            width: calc(100% - var(--text-padding) * 2);
+            left: 0;
+            bottom: 50px;
+            gap: 10px;
+            border-radius: $border-radius;
+
+            filter: drop-shadow(0 0 4px rgb(20, 20, 20, 0.1));
+
+            &-link {
+                min-width: $link-size;
+                min-height: $link-size;
+            }
+
+            &-icon {
+                width: $link-size;
+                height: $link-size;
+                background-size: calc($link-size / 3);
+            }
+        }
+
+        &__item {
+            overflow: visible;
+            margin-bottom: 120px;
+
+            &-text {
+                gap: 10px;
+            }
+            
+            &-title {
+                font-size: 18px;
+            }
+
+            &-desc {
+                font-size: $standart-text-size;
+                opacity: 1;
+            }
+
+            &-hover {
+                background: none;
+                opacity: 1;
+                transform: translateY(120px);
+            }
+            
+            &-background {
+                img {
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    .tabs {
+        &__item {
+            font-size: 20px;
+        }
+    }
+
+    .pagination {
+        &__item {
+            font-size: 20px;
+            padding: 10px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .banner {
+        &__section &__photo {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
     :root {
         --resp-padding: 20px;
     }
@@ -758,6 +873,10 @@ img {
             width: 100%;
             flex-direction: column;
             border-radius: $border-radius;
+        }
+
+        &__section &__photo {
+            display: block;
         }
 
         &__photo {
@@ -871,10 +990,11 @@ img {
                 text-wrap: wrap;
                 font-size: 22px;
                 display: flex;
-                flex-direction: column;
+                gap: 10px;
 
                 &.--margin {
                     margin-top: 30px;
+                    margin-left: 10px;
                 }
             }
 
@@ -998,57 +1118,8 @@ img {
         margin-top: 20px;
         flex-flow: column nowrap;
 
-        &__banner {
-            --text-padding: 20px;
-
-            width: calc(100% - var(--text-padding) * 2);
-            left: 0;
-            bottom: 0;
-            border-radius: $border-radius;
-
-            filter: drop-shadow(0 0 4px rgb(20, 20, 20, 0.1));
-
-            &-link {
-                min-width: $link-size;
-                min-height: $link-size;
-            }
-
-            &-icon {
-                width: $link-size;
-                height: $link-size;
-                background-size: calc($link-size / 3);
-            }
-        }
-
         &__item {
-            overflow: visible;
             width: 100%;
-            margin-bottom: 120px;
-
-            &-text {
-                gap: 10px;
-            }
-            
-            &-title {
-                font-size: 18px;
-            }
-
-            &-desc {
-                font-size: $standart-text-size;
-                opacity: 1;
-            }
-
-            &-hover {
-                background: none;
-                opacity: 1;
-                transform: translateY(120px);
-            }
-            
-            &-background {
-                img {
-                    object-fit: cover;
-                }
-            }
         }
     }
 
