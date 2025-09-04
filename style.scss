@@ -427,6 +427,9 @@ img {
     transform: translateX(-10%);
     z-index: 3;
 
+    display: flex;
+    align-items: center;
+
     &:after {
         content: '';
         position: absolute;
@@ -733,6 +736,7 @@ img {
         }
 
         &__info {
+            width: auto;
             padding: 40px;
 
             &-title {
@@ -745,6 +749,14 @@ img {
 
             &-text {
                 font-size: 18px;
+            }
+            
+            &.--small {
+                width: 100%;
+            }
+
+            &.--center {
+                width: 100%;
             }
         }
 
@@ -835,12 +847,28 @@ img {
             padding: 10px;
         }
     }
+
+    .case {
+        &-image {
+            &__wrapper {
+                &:after {
+                    width: 100vw;
+                    right: -170%;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 1250px) {
     .banner {
         &__section &__photo {
             display: none;
+        }
+
+        &__section &__photo.--stretch {
+            display: block;
         }
     }
 }
