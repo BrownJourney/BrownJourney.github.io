@@ -867,7 +867,7 @@ img {
             &-hover {
                 background: none;
                 opacity: 1;
-                transform: translateY(120px);
+                transform: translateY(180px);
             }
             
             &-background {
@@ -976,6 +976,10 @@ img {
 }
 
 @media only screen and (max-width: 1000px) {
+    $border-radius: 20px;
+    $standart-text-size: 12px;
+    $link-size: 48px;
+
     :root {
         --resp-padding: 20px;
     }
@@ -1120,7 +1124,8 @@ img {
                 text-wrap: wrap;
                 font-size: 22px;
                 display: flex;
-                gap: 10px;
+                flex-direction: column;
+                gap: 0px;
 
                 &.--margin {
                     margin-top: 30px;
