@@ -278,9 +278,20 @@ const I18N_ATTRS = ["aria-label", "alt", "title", "placeholder"];
 let currentLang = "ru";
 const langListeners = [];
 
-// Документ-мета. ru заполняется снимком со страницы в captureRuMeta().
+// Документ-мета. Статический <head> — английский (язык по умолчанию);
+// русские значения заданы здесь явно для переключения на RU.
 const DOC_META = {
-  ru: null,
+  ru: {
+    htmlLang: "ru",
+    title: "Даниил Лапшин — AI Engineer & Fullstack-разработчик",
+    description:
+      "Даниил Лапшин — AI Engineer и fullstack-разработчик с опытом 3+ года. ИИ-агенты, RAG-системы, чат-боты, CRM и highload-бэкенды на TypeScript и Python — от MVP до продакшена.",
+    ogTitle: "Даниил Лапшин — AI Engineer & Fullstack-разработчик",
+    ogDescription:
+      "ИИ-агенты, RAG-системы, CRM и веб-приложения на современном стеке — от MVP до надёжного продакшена. Опыт 3+ года.",
+    ogLocale: "ru_RU",
+    ogSiteName: "Даниил Лапшин",
+  },
   en: {
     htmlLang: "en",
     title: "Daniil Lapshin — AI Engineer & Fullstack Developer",
@@ -290,6 +301,7 @@ const DOC_META = {
     ogDescription:
       "AI agents, RAG systems, CRMs and web apps on a modern stack — from MVP to reliable production. 3+ years of experience.",
     ogLocale: "en_US",
+    ogSiteName: "Daniil Lapshin",
   },
 };
 
@@ -324,21 +336,6 @@ function onLangChange(fn) {
   langListeners.push(fn);
 }
 
-function captureRuMeta() {
-  const get = (sel) => {
-    const el = document.querySelector(sel);
-    return el ? el.getAttribute("content") : null;
-  };
-  DOC_META.ru = {
-    htmlLang: "ru",
-    title: document.title,
-    description: get('meta[name="description"]'),
-    ogTitle: get('meta[property="og:title"]'),
-    ogDescription: get('meta[property="og:description"]'),
-    ogLocale: get('meta[property="og:locale"]'),
-  };
-}
-
 // Один раз: сохранить исходные RU-значения для точного возврата на RU.
 function snapshotRu() {
   document.querySelectorAll("[data-en]").forEach((el) => {
@@ -366,6 +363,7 @@ function applyDocMeta(lang) {
   set('meta[property="og:title"]', m.ogTitle);
   set('meta[property="og:description"]', m.ogDescription);
   set('meta[property="og:locale"]', m.ogLocale);
+  set('meta[property="og:site_name"]', m.ogSiteName);
 }
 
 function updateToggle(lang) {
@@ -410,7 +408,6 @@ function setLang(lang) {
 }
 
 function initI18n() {
-  captureRuMeta();
   snapshotRu();
   document.querySelectorAll(".lang-toggle").forEach((btn) => {
     btn.addEventListener("click", () =>
