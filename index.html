@@ -29,21 +29,29 @@
       <span class="brand-name"><span class="brand-fn">Daniil </span>Lapshin</span>
     </a>
     <div class="nav-links">
-      <a href="#services">Услуги</a>
-      <a href="#process">Процесс</a>
-      <a href="#cases">Кейсы</a>
-      <a href="#faq">FAQ</a>
+      <a href="#services" data-en="Services">Услуги</a>
+      <a href="#process" data-en="Process">Процесс</a>
+      <a href="#cases" data-en="Cases">Кейсы</a>
+      <a href="#faq" data-en="FAQ">FAQ</a>
     </div>
     <div class="nav-cta">
-      <a href="#cases" class="btn btn-ghost" style="padding:11px 18px;font-size:14px">Кейсы</a>
+      <a href="#cases" class="btn btn-ghost" style="padding:11px 18px;font-size:14px" data-en="Cases">Кейсы</a>
       <a href="https://t.me/brojuy" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-tg">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M22 3 11 14"></path>
           <path d="M22 3 15 21l-4-7-7-4 18-7Z"></path>
         </svg>
-        <span class="nav-tg-label">Telegram</span>
+        <span class="nav-tg-label" data-en="Telegram">Telegram</span>
       </a>
-      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mobileMenu">
+      <button class="lang-toggle" type="button" aria-label="Switch to English">
+        <svg class="lang-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M3 12h18"></path>
+          <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18"></path>
+        </svg>
+        <span class="lang-toggle-label">EN</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Меню" data-en-aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span>
         <span></span>
       </button>
@@ -51,11 +59,19 @@
   </nav>
 
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#services">Услуги</a>
-    <a href="#process">Процесс</a>
-    <a href="#cases">Кейсы</a>
-    <a href="#faq">FAQ</a>
-    <a href="https://t.me/brojuy" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+      <button class="lang-toggle" type="button" aria-label="Switch to English">
+        <svg class="lang-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M3 12h18"></path>
+          <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18"></path>
+        </svg>
+        <span class="lang-toggle-label">EN</span>
+      </button>
+      <a href="#services" data-en="Services">Услуги</a>
+      <a href="#process" data-en="Process">Процесс</a>
+      <a href="#cases" data-en="Cases">Кейсы</a>
+      <a href="#faq" data-en="FAQ">FAQ</a>
+      <a href="https://t.me/brojuy" target="_blank" rel="noopener noreferrer" data-en="Message me on Telegram">Написать в Telegram</a>
   </div>
 
   <!-- ============ HERO ============ -->

@@ -199,6 +199,159 @@ const CASES = [
 ];
 
 /* ============================================================
+   i18n — переключение языка RU / EN.
+   RU — исходный inline-текст разметки. EN: текст в data-en,
+   атрибуты в data-en-<attr>, документ-мета в DOC_META.
+   ============================================================ */
+const LANG_KEY = "lang";
+const SUPPORTED = ["ru", "en"];
+const I18N_ATTRS = ["aria-label", "alt", "title", "placeholder"];
+let currentLang = "ru";
+const langListeners = [];
+
+// Документ-мета. ru заполняется снимком со страницы в captureRuMeta().
+const DOC_META = {
+  ru: null,
+  en: {
+    htmlLang: "en",
+    title: "Daniil Lapshin — AI Engineer & Fullstack Developer",
+    description:
+      "Daniil Lapshin — AI Engineer and fullstack developer with 3+ years of experience. AI agents, RAG systems, chatbots, CRMs and highload backends in TypeScript and Python — from MVP to production.",
+    ogTitle: "Daniil Lapshin — AI Engineer & Fullstack Developer",
+    ogDescription:
+      "AI agents, RAG systems, CRMs and web apps on a modern stack — from MVP to reliable production. 3+ years of experience.",
+    ogLocale: "en_US",
+  },
+};
+
+function readStoredLang() {
+  try {
+    const v = localStorage.getItem(LANG_KEY);
+    return SUPPORTED.includes(v) ? v : null;
+  } catch (_) {
+    return null;
+  }
+}
+function writeStoredLang(lang) {
+  try {
+    localStorage.setItem(LANG_KEY, lang);
+  } catch (_) {
+    /* приватный режим — работаем только в памяти */
+  }
+}
+
+function getLang() {
+  return currentLang;
+}
+
+// Перевод поля объекта кейса по текущему языку: tr(d, "task").
+function tr(obj, field) {
+  if (currentLang === "en") return obj[field + "_en"] ?? obj[field];
+  return obj[field];
+}
+
+// Подписка на смену языка (модал кейса перерисовывает себя).
+function onLangChange(fn) {
+  langListeners.push(fn);
+}
+
+function captureRuMeta() {
+  const get = (sel) => {
+    const el = document.querySelector(sel);
+    return el ? el.getAttribute("content") : null;
+  };
+  DOC_META.ru = {
+    htmlLang: "ru",
+    title: document.title,
+    description: get('meta[name="description"]'),
+    ogTitle: get('meta[property="og:title"]'),
+    ogDescription: get('meta[property="og:description"]'),
+    ogLocale: get('meta[property="og:locale"]'),
+  };
+}
+
+// Один раз: сохранить исходные RU-значения для точного возврата на RU.
+function snapshotRu() {
+  document.querySelectorAll("[data-en]").forEach((el) => {
+    if (!el.hasAttribute("data-ru")) el.setAttribute("data-ru", el.textContent);
+  });
+  I18N_ATTRS.forEach((attr) => {
+    document.querySelectorAll(`[data-en-${attr}]`).forEach((el) => {
+      const ruName = `data-ru-${attr}`;
+      if (!el.hasAttribute(ruName))
+        el.setAttribute(ruName, el.getAttribute(attr) ?? "");
+    });
+  });
+}
+
+function applyDocMeta(lang) {
+  const m = DOC_META[lang];
+  if (!m) return;
+  document.documentElement.setAttribute("lang", m.htmlLang);
+  if (m.title != null) document.title = m.title;
+  const set = (sel, val) => {
+    const el = document.querySelector(sel);
+    if (el && val != null) el.setAttribute("content", val);
+  };
+  set('meta[name="description"]', m.description);
+  set('meta[property="og:title"]', m.ogTitle);
+  set('meta[property="og:description"]', m.ogDescription);
+  set('meta[property="og:locale"]', m.ogLocale);
+}
+
+function updateToggle(lang) {
+  const target = lang === "ru" ? "EN" : "RU";
+  document.querySelectorAll(".lang-toggle").forEach((btn) => {
+    const label = btn.querySelector(".lang-toggle-label");
+    if (label) label.textContent = target;
+    btn.setAttribute(
+      "aria-label",
+      lang === "ru" ? "Switch to English" : "Переключить на русский"
+    );
+  });
+}
+
+function setLang(lang) {
+  if (!SUPPORTED.includes(lang)) lang = "ru";
+  currentLang = lang;
+  writeStoredLang(lang);
+
+  document.querySelectorAll("[data-en]").forEach((el) => {
+    const ru = el.getAttribute("data-ru");
+    el.textContent =
+      lang === "en" ? el.getAttribute("data-en") : ru ?? el.textContent;
+  });
+  I18N_ATTRS.forEach((attr) => {
+    document.querySelectorAll(`[data-en-${attr}]`).forEach((el) => {
+      const ru = el.getAttribute(`data-ru-${attr}`);
+      const en = el.getAttribute(`data-en-${attr}`);
+      el.setAttribute(attr, lang === "en" ? en : ru ?? el.getAttribute(attr));
+    });
+  });
+
+  applyDocMeta(lang);
+  updateToggle(lang);
+  langListeners.forEach((fn) => {
+    try {
+      fn(lang);
+    } catch (_) {
+      /* слушатель не должен ронять переключение */
+    }
+  });
+}
+
+function initI18n() {
+  captureRuMeta();
+  snapshotRu();
+  document.querySelectorAll(".lang-toggle").forEach((btn) => {
+    btn.addEventListener("click", () =>
+      setLang(currentLang === "ru" ? "en" : "ru")
+    );
+  });
+  setLang(readStoredLang() ?? "ru");
+}
+
+/* ============================================================
    Инициализация интерактива
    ============================================================ */
 (function () {
@@ -796,4 +949,6 @@ const CASES = [
       update();
     }
   }
+
+  initI18n();
 })();

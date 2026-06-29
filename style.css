@@ -702,3 +702,41 @@ body.modal-lock{overflow:hidden}
 .case-ph.nda .nda-sub{font-family:var(--ff);font-size:10px;letter-spacing:.03em;color:var(--muted-2)}
 .cm-hero .case-ph.nda .nda-lock{width:34px;height:34px}
 .cm-hero .case-ph.nda .nda-title{font-size:24px}
+
+/* ===== Переключатель языка ===== */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 12px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--fg, #1d1d1f);
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+.lang-toggle:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.28);
+}
+.lang-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+.lang-toggle-icon {
+  width: 16px;
+  height: 16px;
+}
+.lang-toggle-label {
+  letter-spacing: 0.02em;
+}
+/* в мобильном меню кнопка занимает свою строку */
+.mobile-menu .lang-toggle {
+  align-self: flex-start;
+}
