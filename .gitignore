@@ -1,0 +1,11 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# OS / editor
+.DS_Store
+*.pem
+
+# debug logs
+*-debug.log*
+
+# brainstorm visual companion
+.superpowers/

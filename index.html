@@ -1,11 +1,739 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f7">
+  <title>Даниил Лапшин — AI Engineer &amp; Fullstack-разработчик</title>
+  <meta name="description" content="Даниил Лапшин — AI Engineer и fullstack-разработчик с опытом 3+ года. ИИ-агенты, RAG-системы, чат-боты, CRM и highload-бэкенды на TypeScript и Python — от MVP до продакшена.">
+  <meta name="keywords" content="AI Engineer, fullstack-разработчик, ИИ-агенты, RAG, LLM, Next.js, TypeScript, Python, Даниил Лапшин">
+  <meta property="og:title" content="Даниил Лапшин — AI Engineer &amp; Fullstack-разработчик">
+  <meta property="og:description" content="ИИ-агенты, RAG-системы, CRM и веб-приложения на современном стеке — от MVP до надёжного продакшена. Опыт 3+ года.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="Даниил Лапшин">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+  <!-- ============ NAV ============ -->
+  <nav class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="Daniil Lapshin">
+      <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+        <rect class="bm-sq" width="24" height="24" rx="2"></rect>
+        <path class="bm-tri" d="M12 6.8 17.3 16.4 6.7 16.4Z"></path>
+      </svg>
+      <span class="brand-name"><span class="brand-fn">Daniil </span>Lapshin</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Услуги</a>
+      <a href="#process">Процесс</a>
+      <a href="#cases">Кейсы</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#cases" class="btn btn-ghost" style="padding:11px 18px;font-size:14px">Кейсы</a>
+      <a href="https://t.me/brojuy" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-tg">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 3 11 14"></path>
+          <path d="M22 3 15 21l-4-7-7-4 18-7Z"></path>
+        </svg>
+        <span class="nav-tg-label">Telegram</span>
+      </a>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services">Услуги</a>
+    <a href="#process">Процесс</a>
+    <a href="#cases">Кейсы</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://t.me/brojuy" target="_blank" rel="noopener noreferrer">Написать в Telegram</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero" id="top">
+    <div class="hero-glow g1"></div>
+    <div class="hero-glow g2"></div>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <h1 class="reveal in" data-d="1"><em>AI&#8209;продукты</em>, которые работают на&nbsp;бизнес</h1>
+          <p class="hero-sub reveal in" data-d="2">Проектирую ИИ-агентов, RAG-системы, чат-боты, CRM и&nbsp;highload-бэкенды&nbsp;— от&nbsp;идеи и&nbsp;MVP до&nbsp;надёжного продакшена на&nbsp;современном стеке.</p>
+          <div class="hero-cta reveal in" data-d="3">
+            <a href="https://t.me/brojuy" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+              Написать в Telegram
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 3 11 14"></path>
+                <path d="M22 3 15 21l-4-7-7-4 18-7Z"></path>
+              </svg>
+            </a>
+            <a href="#cases" class="btn btn-ghost btn-lg">Посмотреть кейсы</a>
+          </div>
+        </div>
+
+        <!-- Фото + карточка-бейдж -->
+        <div class="hero-visual reveal in" data-d="3">
+          <div class="hero-photo">
+            <img src="public/me.jpg" alt="Даниил Лапшин — AI Engineer и fullstack-разработчик" width="1200" height="1600">
+          </div>
+          <div class="hero-badge">
+            <div class="hb-eyebrow">AI Engineer · Fullstack</div>
+            <div class="hb-num">3+ года</div>
+            <div class="hb-cap">опыта в&nbsp;проде</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ TRANSITION ============ -->
+  <section class="transition theme-dark">
+    <div class="wrap">
+      <p class="big-state reveal">
+        Беру сложные требования.
+        <br>
+        <span>Превращаю их в продукты, которыми пользуются.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="sec" id="services">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">01 — Услуги</span>
+        <h2>Что я делаю</h2>
+        <p>Берусь за задачи, где нужны и продукт, и инженерия: от MVP до production-системы, которой пользуются каждый день.</p>
+      </div>
+      <div class="launch">
+        <!-- 01 — Fullstack -->
+        <article class="lc reveal" data-d="1">
+          <div class="lc-text">
+            <span class="lc-div"></span>
+            <h3>Fullstack-разработка</h3>
+            <p>Продуманный фронтенд на React и Next.js и надёжный бэкенд — без техдолга.</p>
+          </div>
+          <div class="lc-art">
+            <div class="mock mb">
+              <div class="mb-bar">
+                <i></i>
+                <i></i>
+                <i></i>
+                <span></span>
+              </div>
+              <div class="mb-scr">
+                <div class="mb-head"></div>
+                <div class="mock-line"></div>
+                <div class="mock-line sm"></div>
+                <div class="mb-btn"></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 — API-интеграции -->
+        <article class="lc reveal" data-d="2">
+          <div class="lc-text">
+            <span class="lc-div"></span>
+            <h3>Интеграции и автоматизация</h3>
+            <p>Связываю сервисы и API и автоматизирую рутину: платёжки, маркетплейсы, CRM, документооборот, ETL.</p>
+          </div>
+          <div class="lc-art">
+            <div class="mock mm">
+              <div class="mm-root">
+                <i></i>
+                <i></i>
+                <i></i>
+                <b></b>
+              </div>
+              <svg class="mm-wire" viewBox="0 0 200 60" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M100 0v22M24 22h152M24 22v34M100 22v34M176 22v34"></path>
+              </svg>
+              <div class="mm-row">
+                <div class="mm-node">
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="mm-node on">
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="mm-node">
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 03 — Highload-бэкенд -->
+        <article class="lc reveal" data-d="3">
+          <div class="lc-text">
+            <span class="lc-div"></span>
+            <h3>Highload-бэкенд</h3>
+            <p>Серверная архитектура под нагрузку: очереди, кеш и микросервисы, которые держат пик.</p>
+          </div>
+          <div class="lc-art">
+            <div class="mock mvp">
+              <div class="mvp-card c1"></div>
+              <div class="mvp-card c2"></div>
+              <div class="mvp-cube">
+                <svg viewBox="9 8 82 91" aria-hidden="true">
+                  <path d="M50 11 87 32 50 53 13 32Z" fill="#5aa9ff"></path>
+                  <path d="M13 32 50 53v44L13 76Z" fill="#0056c7"></path>
+                  <path d="M87 32 50 53v44l37-21Z" fill="#0071e3"></path>
+                  <path d="M50 11 87 32 50 53 13 32Zm0 42L13 32M50 53l37-21M50 53v44" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="1.4" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 04 — CRM и админ-панели -->
+        <article class="lc lc--wide reveal" data-d="4">
+          <div class="lc-text">
+            <span class="lc-div"></span>
+            <h3>CRM и админ-панели</h3>
+            <p>Внутренние системы, которые ускоряют работу команды: понятные дашборды, автоматизация процессов и контроль данных.</p>
+          </div>
+          <div class="lc-art">
+            <div class="mock crm">
+              <aside class="crm-side">
+                <span class="crm-logo"></span>
+                <span class="crm-nav"></span>
+                <span class="crm-nav on"></span>
+                <span class="crm-nav"></span>
+                <span class="crm-nav"></span>
+                <span class="crm-foot"></span>
+              </aside>
+              <div class="crm-main">
+                <div class="crm-tiles">
+                  <span class="crm-tile"></span>
+                  <span class="crm-tile accent"></span>
+                  <span class="crm-tile"></span>
+                </div>
+                <div class="crm-chart">
+                  <svg viewBox="0 0 120 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="4,30 24,20 44,26 66,12 88,18 116,5"></polyline>
+                  </svg>
+                </div>
+                <div class="crm-rows">
+                  <span class="crm-row"></span>
+                  <span class="crm-row"></span>
+                  <span class="crm-row"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 05 — AI-агенты, RAG и чат-боты -->
+        <article class="lc lc--wide reveal" data-d="5">
+          <div class="lc-text">
+            <span class="lc-div"></span>
+            <h3>AI-агенты, RAG и чат-боты</h3>
+            <p>ИИ, который приносит пользу: автономные агенты, чат-боты с поиском по вашим данным (RAG) и аккуратная интеграция LLM в продукт.</p>
+          </div>
+          <div class="lc-art">
+            <div class="mock ai">
+              <svg class="ai-wires" viewBox="0 0 320 200" fill="none" aria-hidden="true">
+                <path d="M160 100 90 64M160 100 230 64M160 100 90 136M160 100 230 136" stroke="currentColor" stroke-width="2" stroke-dasharray="2 9" stroke-linecap="round"></path>
+                <circle cx="90" cy="64" r="2.6" fill="currentColor"></circle>
+                <circle cx="230" cy="64" r="2.6" fill="currentColor"></circle>
+                <circle cx="90" cy="136" r="2.6" fill="currentColor"></circle>
+                <circle cx="230" cy="136" r="2.6" fill="currentColor"></circle>
+              </svg>
+              <div class="ai-tile tl">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="5" y="3" width="14" height="18" rx="2"></rect>
+                  <path d="M9 8h6M9 12h6M9 16h4"></path>
+                </svg>
+              </div>
+              <div class="ai-tile tr">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                  <ellipse cx="12" cy="6" rx="7" ry="3"></ellipse>
+                  <path d="M5 6v12c0 1.6 3.1 3 7 3s7-1.4 7-3V6M5 12c0 1.6 3.1 3 7 3s7-1.4 7-3"></path>
+                </svg>
+              </div>
+              <div class="ai-tile bl">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+                  <path d="M9 6h11M9 12h11M9 18h11"></path>
+                  <circle cx="4.5" cy="6" r="1.1" fill="currentColor" stroke="none"></circle>
+                  <circle cx="4.5" cy="12" r="1.1" fill="currentColor" stroke="none"></circle>
+                  <circle cx="4.5" cy="18" r="1.1" fill="currentColor" stroke="none"></circle>
+                </svg>
+              </div>
+              <div class="ai-tile br">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="9"></circle>
+                  <path d="M8 12.5l3 3 5-6"></path>
+                </svg>
+              </div>
+              <div class="ai-chip">AI</div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <a href="https://t.me/brojuy" target="_blank" rel="noopener noreferrer" class="launch-cta reveal">
+        Обсудить задачу в Telegram
+        <svg viewBox="0 0 38 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 8h32M27 2l7 6-7 6"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section class="sec theme-dark" id="process">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">02 — Процесс</span>
+        <h2>Как я довожу проект до прода</h2>
+        <p>Понятный маршрут с фиксированными точками. Вы всегда знаете, на каком этапе проект и что дальше.</p>
+      </div>
+      <div class="flow reveal">
+        <div class="flow-list" role="tablist" aria-label="Этапы работы над проектом">
+          <button class="flow-item on" type="button" role="tab" id="flow-t0" aria-controls="flow-p0" aria-selected="true" tabindex="0" data-i="0">
+            <span class="fi-no">01</span>
+            <span class="fi-name">Анализ</span>
+          </button>
+          <button class="flow-item" type="button" role="tab" id="flow-t1" aria-controls="flow-p1" aria-selected="false" tabindex="-1" data-i="1">
+            <span class="fi-no">02</span>
+            <span class="fi-name">Архитектура</span>
+          </button>
+          <button class="flow-item" type="button" role="tab" id="flow-t2" aria-controls="flow-p2" aria-selected="false" tabindex="-1" data-i="2">
+            <span class="fi-no">03</span>
+            <span class="fi-name">Разработка</span>
+          </button>
+          <button class="flow-item" type="button" role="tab" id="flow-t3" aria-controls="flow-p3" aria-selected="false" tabindex="-1" data-i="3">
+            <span class="fi-no">04</span>
+            <span class="fi-name">Тестирование</span>
+          </button>
+          <button class="flow-item" type="button" role="tab" id="flow-t4" aria-controls="flow-p4" aria-selected="false" tabindex="-1" data-i="4">
+            <span class="fi-no">05</span>
+            <span class="fi-name">Запуск</span>
+          </button>
+        </div>
+
+        <div class="flow-card">
+          <article class="flow-panel on" id="flow-p0" role="tabpanel" aria-labelledby="flow-t0" tabindex="0">
+            <span class="fp-no">01</span>
+            <span class="fp-name">Анализ</span>
+            <h3>Разбираю задачу</h3>
+            <p>Погружаюсь в бизнес-цели и требования, фиксирую границы и критерии готовности. Чёткий скоуп — половина успеха проекта.</p>
+            <ul class="flow-tags">
+              <li>цели</li>
+              <li>требования</li>
+              <li>скоуп</li>
+            </ul>
+          </article>
+          <article class="flow-panel" id="flow-p1" role="tabpanel" aria-labelledby="flow-t1" tabindex="0">
+            <span class="fp-no">02</span>
+            <span class="fp-name">Архитектура</span>
+            <h3>Проектирую систему</h3>
+            <p>Подбираю стек под задачу и проектирую архитектуру: API, модель данных, интеграции и точки роста под нагрузку.</p>
+            <ul class="flow-tags">
+              <li>стек</li>
+              <li>API</li>
+              <li>схема данных</li>
+            </ul>
+          </article>
+          <article class="flow-panel" id="flow-p2" role="tabpanel" aria-labelledby="flow-t2" tabindex="0">
+            <span class="fp-no">03</span>
+            <span class="fp-name">Разработка</span>
+            <h3>Пишу код</h3>
+            <p>Fullstack на современном стеке — TypeScript и Python. ИИ-инструменты ускоряют рутину, а решения и качество остаются за мной.</p>
+            <ul class="flow-tags">
+              <li>fullstack</li>
+              <li>AI</li>
+              <li>интеграции</li>
+            </ul>
+          </article>
+          <article class="flow-panel" id="flow-p3" role="tabpanel" aria-labelledby="flow-t3" tabindex="0">
+            <span class="fp-no">04</span>
+            <span class="fp-name">Тестирование</span>
+            <h3>Покрываю тестами</h3>
+            <p>Автотесты, smoke-проверки и ревью. Ловлю проблемы до продакшена, а не после жалоб пользователей.</p>
+            <ul class="flow-tags">
+              <li>автотесты</li>
+              <li>smoke</li>
+              <li>ревью</li>
+            </ul>
+          </article>
+          <article class="flow-panel" id="flow-p4" role="tabpanel" aria-labelledby="flow-t4" tabindex="0">
+            <span class="fp-no">05</span>
+            <span class="fp-name">Запуск</span>
+            <h3>Вывожу в прод</h3>
+            <p>Деплой, CI/CD и мониторинг. Передаю код, доступы и документацию — всё остаётся у вас.</p>
+            <ul class="flow-tags">
+              <li>CI/CD</li>
+              <li>деплой</li>
+              <li>передача</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CASES ============ -->
+  <section class="sec" id="cases">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">03 — Кейсы</span>
+        <h2>Запускал в проде. <em>Влиял на бизнес</em></h2>
+        <p>Реальные проекты из моего опыта — от CRM для автобизнеса до ИИ-агентов в Сбере. Нажмите на карточку, чтобы открыть детали.</p>
+      </div>
+
+      <div class="cases-grid reveal" id="casesGrid">
+        <!-- Сбер -->
+        <article class="case" data-case="sber" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Открыть кейс: Сбер">
+          <div class="case-shot">
+            <span class="case-year">2026</span>
+            <div class="case-ph nda">
+              <svg class="nda-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="4" y="11" width="16" height="9" rx="2"></rect>
+                <path d="M8 11V8a4 4 0 0 1 8 0v3"></path>
+              </svg>
+              <span class="nda-title">Под NDA</span>
+              <span class="nda-sub">Внутренний продукт банка</span>
+            </div>
+            <img src="public/cases/sber-nda.png" alt="Сбер — ИИ-агент и RAG над дизайн-системой">
+          </div>
+          <div class="case-body">
+            <div class="meta">
+              <h3>Сбер</h3>
+              <div class="case-tags">
+                <span class="ctag">AI Engineer</span>
+                <span class="ctag alt">LLM / RAG</span>
+              </div>
+            </div>
+            <div class="cs-rows">
+              <p class="cs-line"><b>Задача:</b> Дать инженерам и дизайнерам ИИ-помощника по дизайн-системе.</p>
+              <p class="cs-line result"><b>Результат:</b> Универсальный агент со скиллами, MCP-сервер с RAG и чат-бот для дизайнеров.</p>
+            </div>
+            <span class="case-open">
+              Смотреть кейс
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- Антикварный салон -->
+        <article class="case" data-case="antiques" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Открыть кейс: Антикварный салон">
+          <div class="case-shot">
+            <span class="case-year">2026</span>
+            <div class="case-ph">Антикварный салон</div>
+            <img src="public/cases/antiques.png" alt="Антикварный салон — сайт с онлайн-оценкой антиквариата" style="object-position:center top">
+          </div>
+          <div class="case-body">
+            <div class="meta">
+              <h3>Антикварный салон</h3>
+              <div class="case-tags">
+                <span class="ctag">Сайт под ключ</span>
+                <span class="ctag alt">SEO</span>
+              </div>
+            </div>
+            <div class="cs-rows">
+              <p class="cs-line"><b>Задача:</b> Сделать антикварному салону полноценный корпоративный сайт с каталогом и онлайн-оценкой по фото.</p>
+              <p class="cs-line result"><b>Результат:</b> Многостраничный сайт с каталогом, админкой и SEO — поток обращений из поиска.</p>
+            </div>
+            <span class="case-open">
+              Смотреть кейс
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- Astra -->
+        <article class="case" data-case="astra" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Открыть кейс: Astra">
+          <div class="case-shot">
+            <span class="case-year">2025</span>
+            <div class="case-ph">Astra</div>
+            <img src="public/cases/astra.png" alt="Astra — ИИ-ответы на маркетплейсах" style="object-position:center 60%">
+          </div>
+          <div class="case-body">
+            <div class="meta">
+              <h3>Astra</h3>
+              <div class="case-tags">
+                <span class="ctag">Fullstack</span>
+                <span class="ctag alt">Маркетплейсы</span>
+              </div>
+            </div>
+            <div class="cs-rows">
+              <p class="cs-line"><b>Задача:</b> Развить SaaS для автоматических ИИ-ответов продавцам.</p>
+              <p class="cs-line result"><b>Результат:</b> Скорость вывода фич ×2, ИИ дорос до агентского воркфлоу с RAG.</p>
+            </div>
+            <span class="case-open">
+              Смотреть кейс
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- EasyCarInspection -->
+        <article class="case" data-case="inspection" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Открыть кейс: EasyCarInspection">
+          <div class="case-shot">
+            <span class="case-year">2024</span>
+            <div class="case-ph">EasyCarInspection</div>
+            <img src="public/cases/inspection.png" alt="EasyCarInspection — онлайн-осмотры авто для Uber, Lyft и Turo">
+          </div>
+          <div class="case-body">
+            <div class="meta">
+              <h3>EasyCarInspection</h3>
+              <div class="case-tags">
+                <span class="ctag">Fullstack</span>
+                <span class="ctag alt">Next.js + WordPress</span>
+              </div>
+            </div>
+            <div class="cs-rows">
+              <p class="cs-line"><b>Задача:</b> Сделать сайт для продажи онлайн-отчётов об осмотре авто.</p>
+              <p class="cs-line result"><b>Результат:</b> Гибрид WordPress + Next.js с оплатой Stripe и конверсией 4–5% в день.</p>
+            </div>
+            <span class="case-open">
+              Смотреть кейс
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- Маркировки -->
+        <article class="case" data-case="marking" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Открыть кейс: Маркировки">
+          <div class="case-shot">
+            <span class="case-year">2024</span>
+            <div class="case-ph">Маркировки</div>
+            <img src="public/cases/marking.png" alt="Маркировки — сервис маркировки товаров «Честный знак»">
+          </div>
+          <div class="case-body">
+            <div class="meta">
+              <h3>Маркировки</h3>
+              <div class="case-tags">
+                <span class="ctag">MVP</span>
+                <span class="ctag alt">Next.js</span>
+              </div>
+            </div>
+            <div class="cs-rows">
+              <p class="cs-line"><b>Задача:</b> Запустить сервис, упрощающий маркировку товаров.</p>
+              <p class="cs-line result"><b>Результат:</b> Рабочий MVP на Next.js: приём и обработка заявок на маркировку.</p>
+            </div>
+            <span class="case-open">
+              Смотреть кейс
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </div>
+        </article>
+
+        <!-- DealCenter -->
+        <article class="case" data-case="dealcenter" tabindex="0" role="button" aria-haspopup="dialog" aria-label="Открыть кейс: DealCenter">
+          <div class="case-shot">
+            <span class="case-year">2023</span>
+            <div class="case-ph">DealCenter</div>
+            <img src="public/cases/dealcenter.png" alt="DealCenter — CRM для автобизнеса">
+          </div>
+          <div class="case-body">
+            <div class="meta">
+              <h3>DealCenter</h3>
+              <div class="case-tags">
+                <span class="ctag">CRM</span>
+                <span class="ctag alt">Highload</span>
+              </div>
+            </div>
+            <div class="cs-rows">
+              <p class="cs-line"><b>Задача:</b> Построить CRM для автокредитного бизнеса с нуля до прода.</p>
+              <p class="cs-line result"><b>Результат:</b> Highload-CRM с интеграциями Stripe, DocuSign и ETL — работа команды ×2.</p>
+            </div>
+            <span class="case-open">
+              Смотреть кейс
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+          </div>
+        </article>
+      </div>
+
+      <button class="cases-more" id="casesMore" type="button" aria-controls="casesGrid" aria-expanded="false">Показать все кейсы</button>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec theme-dark" id="faq">
+    <div class="wrap">
+      <div class="sec-head sec-head--center reveal">
+        <span class="eyebrow">04 — Вопросы</span>
+        <h2>Отвечаю на главное</h2>
+      </div>
+      <div class="faq reveal">
+        <div class="qa">
+          <button class="qa-q">Какие задачи ты берёшь?<span class="qa-ic"></span></button>
+          <div class="qa-a">
+            <p>AI-агентов и LLM-интеграции, RAG-системы и чат-ботов, fullstack веб-приложения, API-интеграции и автоматизацию, CRM и админ-панели, highload-бэкенд. Если задача на стыке продукта и инженерии — это ко мне.</p>
+          </div>
+        </div>
+        <div class="qa">
+          <button class="qa-q">Работаешь с клиентами из других стран?<span class="qa-ic"></span></button>
+          <div class="qa-a">
+            <p>Да — работаю удалённо по всему миру. Есть опыт англоязычных проектов: CRM для автобизнеса в США, сервис осмотров авто для Uber, Lyft и Turo. Общаюсь на русском и английском и подстраиваюсь под ваш часовой пояс.</p>
+          </div>
+        </div>
+        <div class="qa">
+          <button class="qa-q">Какой стек используешь?<span class="qa-ic"></span></button>
+          <div class="qa-a">
+            <p>TypeScript и Python как основа. React, Next.js, Node.js, FastAPI; PostgreSQL и MongoDB; Docker и CI/CD; LangChain, LangGraph, MCP и Kafka для ИИ и нагруженных систем. Технологии выбираю под задачу, а не под моду.</p>
+          </div>
+        </div>
+        <div class="qa">
+          <button class="qa-q">Используешь ли ИИ в разработке?<span class="qa-ic"></span></button>
+          <div class="qa-a">
+            <p>Да — и в продукте, и в процессе. Строю ИИ-агентов, RAG и LLM-интеграции там, где они дают ценность. ИИ ускоряет рутину, но архитектуру, решения и качество я держу под контролем сам.</p>
+          </div>
+        </div>
+        <div class="qa">
+          <button class="qa-q">Что с качеством и поддержкой?<span class="qa-ic"></span></button>
+          <div class="qa-a">
+            <p>Покрываю код автотестами и smoke-проверками, делаю ревью и настраиваю CI/CD. После запуска передаю код, доступы и документацию и остаюсь на связи по доработкам.</p>
+          </div>
+        </div>
+        <div class="qa">
+          <button class="qa-q">Как начать работу?<span class="qa-ic"></span></button>
+          <div class="qa-a">
+            <p>Напишите в Telegram пару слов о задаче — отвечу, задам уточняющие вопросы и предложу, как её решить и сколько это займёт.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="sec final" id="final">
+    <div class="wrap">
+      <div class="final-card reveal">
+        <h2>Готовы обсудить проект?</h2>
+        <p>Расскажите о задаче — отвечу в Telegram и предложу, как её решить.</p>
+        <div class="hero-cta">
+          <a href="https://t.me/brojuy" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            Написать в Telegram
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 3 11 14"></path>
+              <path d="M22 3 15 21l-4-7-7-4 18-7Z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer theme-dark">
+    <div class="wrap">
+      <div class="top">
+        <div>
+          <div class="brand" style="font-size:24px">
+            <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+              <rect class="bm-sq" width="24" height="24" rx="2"></rect>
+              <path class="bm-tri" d="M12 6.8 17.3 16.4 6.7 16.4Z"></path>
+            </svg>
+            Daniil Lapshin
+          </div>
+          <p class="tagline">AI Engineer и&nbsp;fullstack-разработчик. Создаю ИИ-агентов, RAG-системы, CRM и&nbsp;веб-приложения&nbsp;— от&nbsp;MVP до&nbsp;надёжного продакшена.</p>
+        </div>
+        <div class="cols">
+          <div class="col">
+            <h4>Навигация</h4>
+            <a href="#services">Услуги</a>
+            <a href="#process">Процесс</a>
+            <a href="#cases">Кейсы</a>
+            <a href="#faq">FAQ</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CASE MODAL ============ -->
+  <div class="modal case-modal" id="caseModal" aria-hidden="true">
+    <div class="modal-backdrop" data-case-close=""></div>
+    <div class="modal-card cm-card" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
+      <button class="modal-x" type="button" aria-label="Закрыть" data-case-close="">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 6 6 18M6 6l12 12" stroke-linecap="round"></path>
+        </svg>
+      </button>
+      <div class="cm-scroll">
+        <div class="cm-hero">
+          <div class="case-ph" id="cmHero"></div>
+        </div>
+        <div class="cm-body">
+          <span class="eyebrow" id="cmKicker">Кейс</span>
+          <h3 id="cmTitle"></h3>
+          <p class="cm-sum" id="cmSummary"></p>
+          <div class="cm-tags" id="cmTags"></div>
+          <div class="cm-blocks">
+            <div class="cm-block">
+              <div class="cm-k">Задача</div>
+              <p id="cmTask"></p>
+            </div>
+            <div class="cm-block">
+              <div class="cm-k">Решение</div>
+              <p id="cmSolution"></p>
+            </div>
+            <div class="cm-block result">
+              <div class="cm-k">Результат</div>
+              <p id="cmResult"></p>
+            </div>
+          </div>
+          <div class="cm-gallery-wrap">
+            <div class="cm-gallery" id="cmGallery"></div>
+            <!-- листалка под фото — стрелки + счётчик (только мобилка) -->
+            <div class="cm-gnav-row">
+              <button class="cm-gnav prev" type="button" aria-label="Предыдущий скриншот" data-gal-prev="">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </button>
+              <div class="cm-gcount" id="cmGalleryCount" aria-hidden="true"></div>
+              <button class="cm-gnav next" type="button" aria-label="Следующий скриншот" data-gal-next="">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="cm-cta">
+            <a href="https://t.me/brojuy" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Обсудить в Telegram
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 3 11 14"></path>
+                <path d="M22 3 15 21l-4-7-7-4 18-7Z"></path>
+              </svg>
+            </a>
+            <span class="cm-role" id="cmRole"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
 </body>
 </html>
