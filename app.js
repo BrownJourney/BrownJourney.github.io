@@ -272,6 +272,8 @@ const CASES = [
    ============================================================ */
 const LANG_KEY = "lang";
 const SUPPORTED = ["ru", "en"];
+// Язык по умолчанию для нового посетителя (без выбора в localStorage).
+const DEFAULT_LANG = "en";
 const I18N_ATTRS = ["aria-label", "alt", "title", "placeholder"];
 let currentLang = "ru";
 const langListeners = [];
@@ -379,7 +381,7 @@ function updateToggle(lang) {
 }
 
 function setLang(lang) {
-  if (!SUPPORTED.includes(lang)) lang = "ru";
+  if (!SUPPORTED.includes(lang)) lang = DEFAULT_LANG;
   currentLang = lang;
   writeStoredLang(lang);
 
@@ -415,7 +417,7 @@ function initI18n() {
       setLang(currentLang === "ru" ? "en" : "ru")
     );
   });
-  setLang(readStoredLang() ?? "ru");
+  setLang(readStoredLang() ?? DEFAULT_LANG);
 }
 
 /* ============================================================
