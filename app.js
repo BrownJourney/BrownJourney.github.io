@@ -445,11 +445,12 @@ function initI18n() {
   const burger = document.getElementById("burger");
   const menu = document.getElementById("mobileMenu");
   if (burger && menu) {
+    const burgerLabels = { ru: { open: "Закрыть меню", closed: "Меню" }, en: { open: "Close menu", closed: "Menu" } };
     const setMenu = (open) => {
       menu.classList.toggle("open", open);
       burger.classList.toggle("open", open);
       burger.setAttribute("aria-expanded", open ? "true" : "false");
-      burger.setAttribute("aria-label", open ? "Закрыть меню" : "Меню");
+      burger.setAttribute("aria-label", burgerLabels[getLang()][open ? "open" : "closed"]);
       document.body.style.overflow = open ? "hidden" : "";
     };
     burger.addEventListener("click", () => {
@@ -457,6 +458,10 @@ function initI18n() {
     });
     menu.querySelectorAll("a").forEach((a) => {
       a.addEventListener("click", () => setMenu(false));
+    });
+    onLangChange(() => {
+      const isOpen = burger.getAttribute("aria-expanded") === "true";
+      burger.setAttribute("aria-label", burgerLabels[getLang()][isOpen ? "open" : "closed"]);
     });
   }
 
@@ -665,13 +670,22 @@ function initI18n() {
         "</svg>";
       return b;
     };
-    const lbPrev = mkLbBtn("prev", "Предыдущее фото", '<path d="M15 6l-6 6 6 6"/>');
-    const lbNext = mkLbBtn("next", "Следующее фото", '<path d="M9 6l6 6-6 6"/>');
-    const lbClose = mkLbBtn("close", "Закрыть", '<path d="M18 6 6 18M6 6l12 12"/>');
+    const lbLabels = {
+      ru: { prev: "Предыдущее фото", next: "Следующее фото", close: "Закрыть" },
+      en: { prev: "Previous photo", next: "Next photo", close: "Close" },
+    };
+    const lbPrev = mkLbBtn("prev", lbLabels[getLang()].prev, '<path d="M15 6l-6 6 6 6"/>');
+    const lbNext = mkLbBtn("next", lbLabels[getLang()].next, '<path d="M9 6l6 6-6 6"/>');
+    const lbClose = mkLbBtn("close", lbLabels[getLang()].close, '<path d="M18 6 6 18M6 6l12 12"/>');
     const lbCount = document.createElement("div");
     lbCount.className = "cm-lb-count";
     lightbox.append(lbPrev, lightboxImg, lbNext, lbClose, lbCount);
     document.body.appendChild(lightbox);
+    onLangChange(() => {
+      lbPrev.setAttribute("aria-label", lbLabels[getLang()].prev);
+      lbNext.setAttribute("aria-label", lbLabels[getLang()].next);
+      lbClose.setAttribute("aria-label", lbLabels[getLang()].close);
+    });
 
     let lbImages = [];
     let lbIndex = 0;
@@ -943,11 +957,17 @@ function initI18n() {
   const casesGrid = document.getElementById("casesGrid");
   const casesMore = document.getElementById("casesMore");
   if (casesGrid && casesMore) {
+    const casesMoreLabels = { ru: { more: "Показать все кейсы", less: "Свернуть" }, en: { more: "Show all cases", less: "Collapse" } };
+    const renderCasesMore = () => {
+      const exp = casesMore.getAttribute("aria-expanded") === "true";
+      casesMore.textContent = casesMoreLabels[getLang()][exp ? "less" : "more"];
+    };
     casesMore.addEventListener("click", () => {
       const expanded = casesGrid.classList.toggle("show-all");
       casesMore.setAttribute("aria-expanded", expanded ? "true" : "false");
-      casesMore.textContent = expanded ? "Свернуть" : "Показать все кейсы";
+      renderCasesMore();
     });
+    onLangChange(renderCasesMore);
   }
 
   /* carousel (элементов нет — no-op, как в концепте) */

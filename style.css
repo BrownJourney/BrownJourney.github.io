@@ -716,14 +716,14 @@ body.modal-lock{overflow:hidden}
   line-height: 1;
   color: var(--fg, #1d1d1f);
   background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.14);
+  border: 1px solid var(--line);
   border-radius: 10px;
   cursor: pointer;
   transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
 .lang-toggle:hover {
   background: rgba(0, 0, 0, 0.05);
-  border-color: rgba(0, 0, 0, 0.28);
+  border-color: var(--line);
 }
 .lang-toggle:focus-visible {
   outline: 2px solid currentColor;

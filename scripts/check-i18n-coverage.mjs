@@ -16,6 +16,7 @@ const html = readFileSync(url, "utf8");
 
 // Убираем зоны без переводимого видимого текста.
 const stripped = html
+  .replace(/<!--[\s\S]*?-->/g, "")
   .replace(/<head[\s\S]*?<\/head>/i, "")
   .replace(/<script[\s\S]*?<\/script>/gi, "")
   .replace(/<style[\s\S]*?<\/style>/gi, "")
