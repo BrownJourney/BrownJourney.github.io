@@ -17,8 +17,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <!-- Ставим класс до первой отрисовки: показывает заставку и блокирует скролл без проблеска контента; при отключённом JS не сработает — заставки не будет. -->
+  <script>document.documentElement.classList.add('is-loading');</script>
 </head>
 <body>
+  <!-- ============ PRELOADER ============ -->
+  <div id="preloader" aria-hidden="true">
+    <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+      <rect class="bm-sq" width="24" height="24" rx="2"></rect>
+      <!-- треугольник разбит от центроида (12 13.2) на 3 клина: расходятся и сходятся обратно -->
+      <g class="pre-tris">
+        <path class="pre-tri t1" d="M12 13.2 L12 6.8 L17.3 16.4 Z"></path>
+        <path class="pre-tri t2" d="M12 13.2 L17.3 16.4 L6.7 16.4 Z"></path>
+        <path class="pre-tri t3" d="M12 13.2 L6.7 16.4 L12 6.8 Z"></path>
+      </g>
+    </svg>
+  </div>
   <!-- ============ NAV ============ -->
   <nav class="nav" id="nav">
     <a class="brand" href="#top" aria-label="Daniil Lapshin">
@@ -597,7 +611,7 @@
     <div class="wrap">
       <div class="sec-head sec-head--center reveal">
         <span class="eyebrow" data-en="04 — Questions">04 — Вопросы</span>
-        <h2 data-en="Answers to key questions">Отвечаю на главное</h2>
+        <h2 data-en="F.A.Q.">Отвечаю на главное</h2>
       </div>
       <div class="faq reveal">
         <div class="qa">

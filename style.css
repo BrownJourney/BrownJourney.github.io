@@ -428,7 +428,7 @@ section{position:relative;z-index:1}
 .final{position:relative;overflow:hidden}
 .final-card{position:relative;border:0;border-radius:var(--r-lg);padding:clamp(40px,6vw,80px) var(--pad);text-align:center;overflow:hidden;isolation:isolate}
 .final-card h2{position:relative;z-index:1;font-family:var(--disp);font-size:var(--fs-h2);font-weight:700;letter-spacing:-.025em;line-height:1.14;text-wrap:balance}
-.final-card p{position:relative;z-index:1;color:var(--muted);font-size:var(--fs-lead);line-height:var(--lh-body);margin:26px auto 0;max-width:54ch}
+.final-card p{position:relative;z-index:1;color:var(--muted);font-size:var(--fs-lead);line-height:var(--lh-body);margin:26px auto 0;max-width:none}
 .final-card .hero-cta{position:relative;z-index:1;justify-content:center}
 
 /* ---------- footer — чёрный блок ---------- */
@@ -708,16 +708,14 @@ body.modal-lock{overflow:hidden}
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  height: 38px;
-  padding: 0 12px;
+  padding: 11px 14px;
   font: inherit;
   font-size: 14px;
   font-weight: 600;
-  line-height: 1;
   color: var(--fg, #1d1d1f);
   background: transparent;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: var(--r);
   cursor: pointer;
   transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
@@ -739,4 +737,60 @@ body.modal-lock{overflow:hidden}
 /* в мобильном меню кнопка занимает свою строку */
 .mobile-menu .lang-toggle {
   align-self: flex-start;
+}
+
+/* ============================================================
+   PRELOADER — заставка загрузки (фирменный знак), ~1с + fade-out.
+   Класс is-loading на <html> ставит инлайн-скрипт до отрисовки.
+   ============================================================ */
+/* блокировка скролла, пока заставка видна */
+html.is-loading { overflow: hidden; }
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 1000; /* выше nav(60)/modal(200)/lightbox(300) */
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  opacity: 1;
+  transition: opacity .2s var(--ease);
+}
+/* пульс знака синхронизирован с разлётом клиньев: та же длительность и ключевые точки 22/55/100% */
+#preloader .brand-mark {
+  width: 64px;
+  height: 64px;
+  animation: preMark .8s var(--ease) both;
+}
+@keyframes preMark {
+  0%, 22% { transform: scale(1); }     /* без появления — знак сразу виден целиком */
+  55%     { transform: scale(1.07); }  /* пульс на пике разъединения */
+  100%    { transform: scale(1); }     /* возврат — синхронно со сборкой */
+}
+/* три клина треугольника: изначально собраны, расходятся от центра, затем сходятся обратно */
+#preloader .pre-tri {
+  fill: #fff;
+  stroke: #fff;          /* тонкая обводка скрывает швы при сборке */
+  stroke-width: .6;
+  stroke-linejoin: round;
+  transform: translate(0, 0);
+  animation: preTriSplit .8s var(--ease) both;
+}
+#preloader .pre-tri.t1 { --dx:  2.2px; --dy: -1.3px; } /* вправо-вверх */
+#preloader .pre-tri.t2 { --dx:  0px;   --dy:  2.6px; } /* вниз */
+#preloader .pre-tri.t3 { --dx: -2.2px; --dy: -1.3px; } /* влево-вверх */
+@keyframes preTriSplit {
+  0%, 22% { transform: translate(0, 0); }                 /* собран, пока знак появляется */
+  55%     { transform: translate(var(--dx), var(--dy)); } /* максимально разошлись */
+  100%    { transform: translate(0, 0); }                 /* сошлись обратно */
+}
+/* старт fade-out: оверлей прозрачный, события мыши/тача проходят насквозь */
+html.is-loaded #preloader {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #preloader .brand-mark,
+  #preloader .pre-tri { animation: none; }
 }

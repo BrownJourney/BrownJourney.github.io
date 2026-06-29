@@ -1053,3 +1053,24 @@ function initI18n() {
 
   initI18n();
 })();
+
+/* ============================================================
+   Заставка загрузки: держим оверлей видимым ~1с, затем fade-out,
+   разблокируем скролл и убираем узел из DOM. Класс is-loading уже
+   стоит на <html> (инлайн-скрипт в <head>).
+   ============================================================ */
+(function initPreloader() {
+  const html = document.documentElement;
+  const pre = document.getElementById("preloader");
+  if (!pre) {
+    html.classList.remove("is-loading");
+    return;
+  }
+  setTimeout(() => {
+    // is-loading → is-loaded: снимает overflow:hidden (скролл) и запускает fade
+    html.classList.replace("is-loading", "is-loaded");
+    const done = () => pre.remove();
+    pre.addEventListener("transitionend", done, { once: true });
+    setTimeout(done, 600); // страховка, если transitionend не сработает
+  }, 800);
+})();
