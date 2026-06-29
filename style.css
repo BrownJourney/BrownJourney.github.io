@@ -551,15 +551,15 @@ section{position:relative;z-index:1}
   .reveal[data-d="3"]{transition-delay:.12s}.reveal[data-d="4"]{transition-delay:.16s}.reveal[data-d="5"]{transition-delay:.20s}
 }
 
-/* мобилка: едва заметная тень карточек + намного меньше «воздуха» (компактнее вертикальный ритм и боковые поля) */
+/* мобилка: едва заметная тень карточек + чуть просторнее боковые поля; вертикальный ритм с «воздухом», чтобы блоки не были прижаты друг к другу */
 @media(max-width:760px){
   :root{
     --shadow-card:0 1px 2px rgba(0,0,0,.04);
-    --sec:clamp(26px,4.5vh,42px);
+    --sec:clamp(52px,8vh,80px);
     --pad:clamp(15px,4.5vw,24px);
   }
-  .sec--tight{padding-block:clamp(22px,3.5vh,36px)}
-  .transition{padding-block:clamp(22px,4vh,40px)}
+  .sec--tight{padding-block:clamp(44px,6vh,64px)}
+  .transition{padding-block:clamp(44px,7vh,68px)}
 }
 
 /* ---------- responsive ---------- */
@@ -592,6 +592,8 @@ section{position:relative;z-index:1}
   .nav-links{display:none}
   .nav-cta .btn-ghost{display:none}
   .burger{display:flex}
+  /* CTA-ряд ровный по высоте: Telegram и переключатель языка той же высоты, что бургер (42px) */
+  .nav-tg,.lang-toggle{height:42px}
   .cursor-glow{display:none!important}
   .cmp-head,.cmp-row{grid-template-columns:1fr}
   .cmp-head{display:none}
@@ -601,12 +603,15 @@ section{position:relative;z-index:1}
   .cmp-row .cell::before{font-family:var(--ff);font-size:10px;letter-spacing:.1em;margin-right:8px}
   .cmp-row .us-cell::before{content:"Мы —";color:var(--accent)}
   .cmp-row .them-cell::before{content:"Они —";color:var(--muted-2)}
-  .cases-grid{grid-template-columns:1fr}
+  .cases-grid{grid-template-columns:1fr;gap:20px}
   /* на мобилке показываем три кейса, остальные раскрываются кнопкой */
   .cases-grid:not(.show-all) .case:nth-child(n+4){display:none}
   .cases-more{display:flex}
   .field-row{grid-template-columns:1fr}
   .lc{min-height:0}
+  /* карточки, что складываются в один столбец, — больше воздуха между ними по вертикали */
+  .launch{row-gap:20px}
+  .flow-card{gap:20px}
 }
 @media(max-width:520px){
   .stats{grid-template-columns:1fr}
