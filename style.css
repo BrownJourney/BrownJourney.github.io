@@ -301,6 +301,101 @@ section{position:relative;z-index:1}
 .launch-cta svg{width:34px;height:15px;transition:transform .35s var(--ease-out)}
 .launch-cta:hover svg{transform:translateX(7px)}
 
+/* ===================================================================
+   «Что я делаю» — у каждого мокапа своя микро-анимация.
+   Десктоп: проигрывается при наведении на карточку (перезапуск каждый раз).
+   Тач: проигрывается один раз, когда карточка появляется (класс .in от reveal).
+   В покое имя анимации не задано → мокапы статичны. Уважает prefers-reduced-motion.
+   =================================================================== */
+@keyframes lcWipe{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes lcPop{0%{opacity:0;transform:scale(.55)}65%{transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+@keyframes lcRise{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lcNodeOn{from{opacity:.25;transform:translateY(8px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes lcBlink{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes lcDraw{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
+@keyframes lcBar{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes lcCube{0%{opacity:.55;transform:translate(-50%,-50%) translateY(9px) rotate(-12deg) scale(.82)}
+  60%{opacity:1;transform:translate(-50%,-50%) translateY(-4px) rotate(6deg) scale(1.04)}
+  100%{opacity:1;transform:translate(-50%,-50%) rotate(0) scale(1)}}
+@keyframes lcFan1{0%,100%{transform:rotate(-9deg)}50%{transform:rotate(-16deg) translateX(-6px)}}
+@keyframes lcFan2{0%,100%{transform:rotate(8deg)}50%{transform:rotate(15deg) translateX(6px)}}
+@keyframes lcChip{0%,100%{box-shadow:0 0 0 5px rgba(var(--glow),.10),0 16px 32px -14px rgba(var(--glow),.6),inset 0 1px 0 rgba(255,255,255,.28)}
+  50%{box-shadow:0 0 0 10px rgba(var(--glow),.18),0 20px 42px -12px rgba(var(--glow),.85),inset 0 1px 0 rgba(255,255,255,.28)}}
+@keyframes lcFlow{from{stroke-dashoffset:0}to{stroke-dashoffset:-22}}
+
+@media (prefers-reduced-motion:no-preference){
+  /* базовые тайминги (общие для обоих триггеров; имя анимации здесь НЕ задаётся) */
+  .lc .mb-head,.lc .mb-scr .mock-line,.lc .mb-btn,
+  .lc .mm-row .mm-node,.lc .mm-wire path,
+  .lc .crm-tile,.lc .crm-chart polyline,.lc .crm-nav.on,.lc .crm-rows .crm-row,
+  .lc .ai-tile{animation-duration:.55s;animation-timing-function:var(--ease-out);animation-fill-mode:both}
+  .lc .mvp-cube,.lc .mvp-card{animation-duration:.7s;animation-timing-function:var(--ease-out);animation-fill-mode:both}
+  .lc .mb-bar i:first-child,.lc .mm-root i:first-child,.lc .ai-wires circle,
+  .lc .mm-node.on span:first-child,.lc .ai-chip,.lc .ai-wires path{animation-fill-mode:both;animation-timing-function:var(--ease)}
+  .lc .mb-bar i:first-child,.lc .mm-root i:first-child{animation-duration:.9s;animation-iteration-count:2}
+  .lc .ai-wires circle{animation-duration:.8s;animation-iteration-count:2}
+  .lc .mm-node.on span:first-child{animation-duration:.7s;animation-iteration-count:3;animation-delay:.5s}
+  .lc .ai-chip{animation-duration:1s;animation-iteration-count:2}
+  .lc .ai-wires path{animation-duration:.7s;animation-iteration-count:3;animation-timing-function:linear}
+  .lc .mm-wire path,.lc .crm-chart polyline{animation-duration:.8s;stroke-dasharray:100}
+  /* точки старта трансформаций */
+  .lc .mb-head,.lc .mb-scr .mock-line,.lc .crm-rows .crm-row,.lc .crm-nav.on{transform-origin:left}
+  /* стаггер-задержки */
+  .lc .mb-scr .mock-line{animation-delay:.09s}
+  .lc .mb-scr .mock-line.sm{animation-delay:.17s}
+  .lc .mb-btn{animation-delay:.26s}
+  .lc .mm-row .mm-node:nth-child(1){animation-delay:.28s}
+  .lc .mm-row .mm-node:nth-child(2){animation-delay:.36s}
+  .lc .mm-row .mm-node:nth-child(3){animation-delay:.44s}
+  .lc .mvp-card{animation-delay:.05s}
+  .lc .crm-chart polyline{animation-delay:.12s}
+  .lc .crm-tiles .crm-tile:nth-child(2){animation-delay:.08s}
+  .lc .crm-tiles .crm-tile:nth-child(3){animation-delay:.16s}
+  .lc .crm-nav.on{animation-delay:.2s}
+  .lc .crm-rows .crm-row:nth-child(1){animation-delay:.28s}
+  .lc .crm-rows .crm-row:nth-child(2){animation-delay:.34s}
+  .lc .crm-rows .crm-row:nth-child(3){animation-delay:.4s}
+  .lc .ai-wires circle:nth-child(2){animation-delay:.1s}
+  .lc .ai-wires circle:nth-child(3){animation-delay:.2s}
+  .lc .ai-wires circle:nth-child(4){animation-delay:.3s}
+  .lc .ai-wires circle:nth-child(5){animation-delay:.4s}
+  .lc .ai-tile.tl{animation-delay:.15s}
+  .lc .ai-tile.tr{animation-delay:.25s}
+  .lc .ai-tile.bl{animation-delay:.35s}
+  .lc .ai-tile.br{animation-delay:.45s}
+
+  /* ДЕСКТОП: по наведению */
+  @media (hover:hover) and (pointer:fine){
+    .lc:hover .mb-head,.lc:hover .mb-scr .mock-line,.lc:hover .crm-rows .crm-row,.lc:hover .crm-nav.on{animation-name:lcWipe}
+    .lc:hover .mb-btn,.lc:hover .ai-tile,.lc:hover .crm-tile.accent{animation-name:lcPop}
+    .lc:hover .crm-tile{animation-name:lcRise}
+    .lc:hover .mb-bar i:first-child,.lc:hover .mm-root i:first-child,.lc:hover .ai-wires circle{animation-name:lcBlink}
+    .lc:hover .mm-wire path,.lc:hover .crm-chart polyline{animation-name:lcDraw}
+    .lc:hover .mm-row .mm-node{animation-name:lcNodeOn}
+    .lc:hover .mm-node.on span:first-child{animation-name:lcBar}
+    .lc:hover .mvp-cube{animation-name:lcCube}
+    .lc:hover .mvp-card.c1{animation-name:lcFan1}
+    .lc:hover .mvp-card.c2{animation-name:lcFan2}
+    .lc:hover .ai-chip{animation-name:lcChip}
+    .lc:hover .ai-wires path{animation-name:lcFlow}
+  }
+  /* ТАЧ: один раз при появлении карточки */
+  @media (hover:none){
+    .lc.in .mb-head,.lc.in .mb-scr .mock-line,.lc.in .crm-rows .crm-row,.lc.in .crm-nav.on{animation-name:lcWipe}
+    .lc.in .mb-btn,.lc.in .ai-tile,.lc.in .crm-tile.accent{animation-name:lcPop}
+    .lc.in .crm-tile{animation-name:lcRise}
+    .lc.in .mb-bar i:first-child,.lc.in .mm-root i:first-child,.lc.in .ai-wires circle{animation-name:lcBlink}
+    .lc.in .mm-wire path,.lc.in .crm-chart polyline{animation-name:lcDraw}
+    .lc.in .mm-row .mm-node{animation-name:lcNodeOn}
+    .lc.in .mm-node.on span:first-child{animation-name:lcBar}
+    .lc.in .mvp-cube{animation-name:lcCube}
+    .lc.in .mvp-card.c1{animation-name:lcFan1}
+    .lc.in .mvp-card.c2{animation-name:lcFan2}
+    .lc.in .ai-chip{animation-name:lcChip}
+    .lc.in .ai-wires path{animation-name:lcFlow}
+  }
+}
+
 /* ============================================================
    PROCESS — этапы (чёрный блок: список слева + карточка)
    ============================================================ */
