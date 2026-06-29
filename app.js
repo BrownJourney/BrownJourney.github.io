@@ -16,23 +16,35 @@ const CASES = [
     id: "sber",
     year: 2026,
     title: "Сбер",
+    title_en: "Sber",
     shotAlt: "Сбер — ИИ-агент и RAG над дизайн-системой",
     cardTags: [{ label: "AI Engineer" }, { label: "LLM / RAG", alt: true }],
     cardTask: "Дать инженерам и дизайнерам ИИ-помощника по дизайн-системе.",
     cardResult:
       "Универсальный агент со скиллами, MCP-сервер с RAG и чат-бот для дизайнеров.",
     kicker: "Кейс · AI Engineer",
+    kicker_en: "Case · AI Engineer",
     summary:
       "Универсальный ИИ-агент, MCP-сервер с RAG над внутренней дизайн-системой и чат-бот для дизайнеров.",
+    summary_en:
+      "A universal AI agent, an MCP server with RAG over the internal design system, and a chatbot for designers.",
     detailTags: ["LangGraph", "MCP", "RAG", "Apache Kafka", "FastAPI", "LanceDB"],
     task: "Дать инженерам и дизайнерам быстрый доступ к знаниям по внутренней дизайн-системе и автоматизировать рутину тестирования и дизайна.",
+    task_en:
+      "Give engineers and designers fast access to knowledge about the internal design system and automate routine testing and design work.",
     solution:
       "Разработал универсального ИИ-агента с системой скиллов и интегрировал его с Apache Kafka для аудита и отказоустойчивости. Построил MCP-сервер с RAG над дизайн-системой и на его основе — чат-бот, который отвечает дизайнерам на вопросы по системе.",
+    solution_en:
+      "Built a universal AI agent with a skills system and integrated it with Apache Kafka for auditing and fault tolerance. Built an MCP server with RAG over the design system and, on top of it, a chatbot that answers designers' questions about the system.",
     result:
       "Команды получают ответы по дизайн-системе за секунды, а агентская платформа легко расширяется новыми скиллами и масштабируется.",
+    result_en:
+      "Teams get answers about the design system in seconds, and the agent platform scales and easily extends with new skills.",
     role: "Роль: AI Engineer · TypeScript, Python, LangGraph, MCP, Kafka",
+    role_en: "Role: AI Engineer · TypeScript, Python, LangGraph, MCP, Kafka",
     nda: true,
     ndaSub: "Внутренний продукт банка",
+    ndaSub_en: "Internal bank product",
     image: "public/cases/sber-nda.png",
     gallery: [],
   },
@@ -40,21 +52,32 @@ const CASES = [
     id: "antiques",
     year: 2026,
     title: "Антикварный салон",
+    title_en: "Antique Gallery",
     shotAlt: "Антикварный салон — сайт с онлайн-оценкой антиквариата",
     cardTags: [{ label: "Сайт под ключ" }, { label: "SEO", alt: true }],
     cardTask: "Сделать антикварному салону полноценный корпоративный сайт с каталогом и онлайн-оценкой по фото.",
     cardResult:
       "Многостраничный сайт с каталогом, админкой и SEO — поток обращений из поиска.",
     kicker: "Кейс · Сайт под ключ",
+    kicker_en: "Case · Turnkey Website",
     summary:
       "Многостраничный корпоративный сайт для антикварного салона в Москве: скупка, продажа, онлайн-оценка по фото и каталог предметов с админкой для наполнения.",
+    summary_en:
+      "A multi-page corporate website for an antique gallery in Moscow: buying, selling, online photo appraisal, and an item catalog with an admin panel for content management.",
     detailTags: ["Next.js", "Многостраничный", "SEO", "Каталог", "Админка", "Формы заявок"],
     task: "Сделать салону полноценный корпоративный сайт, который объясняет услуги скупки и оценки антиквариата, продвигается в поиске и собирает заявки от клиентов.",
+    task_en:
+      "Build a full-featured corporate website that explains the gallery's buying and appraisal services, ranks in search results, and collects client inquiries.",
     solution:
       "Спроектировал и собрал многостраничный сайт с фирменным «антикварным» стилем: онлайн-оценка по фото, каталог предметов, страницы услуг и контактов. Сделал админ-панель для самостоятельного наполнения каталога, настроил формы заявок, адаптив и SEO-оптимизацию под поисковый трафик.",
+    solution_en:
+      "Designed and built a multi-page website with a signature antique style: online photo appraisal, an item catalog, service and contact pages. Built an admin panel for independent catalog management, configured inquiry forms, responsive layout, and SEO optimization for organic search traffic.",
     result:
       "Салон получил полноценный сайт для бизнеса: клиенты отправляют фото на оценку и оставляют заявки, контент-менеджер сам наполняет каталог через админку, а SEO приводит обращения из поиска.",
+    result_en:
+      "The gallery got a fully functional business website: clients submit photos for appraisal and leave inquiries, the content manager fills the catalog independently via the admin panel, and SEO drives inbound leads from search.",
     role: "Роль: дизайн и разработка · Next.js, SEO, админка",
+    role_en: "Role: design and development · Next.js, SEO, admin panel",
     image: "public/cases/antiques.png",
     imagePosition: "center top",
     gallery: [
@@ -70,14 +93,18 @@ const CASES = [
     id: "astra",
     year: 2025,
     title: "Astra",
+    title_en: "Astra",
     shotAlt: "Astra — ИИ-ответы на маркетплейсах",
     cardTags: [{ label: "Fullstack" }, { label: "Маркетплейсы", alt: true }],
     cardTask: "Развить SaaS для автоматических ИИ-ответов продавцам.",
     cardResult:
       "Скорость вывода фич ×2, ИИ дорос до агентского воркфлоу с RAG.",
     kicker: "Кейс · Fullstack",
+    kicker_en: "Case · Fullstack",
     summary:
       "SaaS для автоматических ИИ-ответов продавцам на Wildberries, Ozon и Яндекс.Маркете.",
+    summary_en:
+      "A SaaS for automated AI-powered responses to sellers on Wildberries, Ozon, and Yandex.Market.",
     detailTags: [
       "TypeScript",
       "React",
@@ -88,11 +115,18 @@ const CASES = [
       "Docker",
     ],
     task: "Развить продукт автоматических ИИ-ответов на маркетплейсах и ускорить вывод новых фич в продакшен.",
+    task_en:
+      "Develop the automated AI-response product for marketplaces and accelerate the delivery of new features to production.",
     solution:
       "Перевёл микросервисы на единую базу, внедрил автотесты и smoke-проверки, развил ИИ от простых вызовов LLM до агентского воркфлоу с RAG. Интегрировал API маркетплейсов (Wildberries, Ozon, Яндекс.Маркет) и собрал веб-версию на React.",
+    solution_en:
+      "Migrated microservices to a unified database, introduced automated tests and smoke checks, and evolved the AI from basic LLM calls to an agentic workflow with RAG. Integrated marketplace APIs (Wildberries, Ozon, Yandex.Market) and built the web client in React.",
     result:
       "Скорость вывода фич в продакшен выросла в 2 раза, ключевые системы покрыты автотестами, а ИИ-ответы стали точнее за счёт RAG.",
+    result_en:
+      "Feature delivery speed doubled, core systems are covered by automated tests, and AI responses became more accurate thanks to RAG.",
     role: "Роль: Fullstack-разработчик · astrahelper.ru",
+    role_en: "Role: Fullstack Developer · astrahelper.ru",
     image: "public/cases/astra.png",
     imagePosition: "center 60%",
     gallery: [
@@ -106,21 +140,32 @@ const CASES = [
     id: "inspection",
     year: 2024,
     title: "EasyCarInspection",
+    title_en: "EasyCarInspection",
     shotAlt: "EasyCarInspection — онлайн-осмотры авто для Uber, Lyft и Turo",
     cardTags: [{ label: "Fullstack" }, { label: "Next.js + WordPress", alt: true }],
     cardTask: "Сделать сайт для продажи онлайн-отчётов об осмотре авто.",
     cardResult:
       "Гибрид WordPress + Next.js с оплатой Stripe и конверсией 4–5% в день.",
     kicker: "Кейс · Fullstack",
+    kicker_en: "Case · Fullstack",
     summary:
       "Сайт для продажи быстрых онлайн-отчётов об осмотре авто для водителей Uber, Lyft и Turo.",
+    summary_en:
+      "A website for selling fast online vehicle inspection reports for Uber, Lyft, and Turo drivers.",
     detailTags: ["Next.js", "WordPress", "Stripe", "Google Ads", "Google API"],
     task: "Построить сайт, где водители Uber, Lyft и Turo заказывают и быстро получают отчёт об осмотре автомобиля.",
+    task_en:
+      "Build a website where Uber, Lyft, and Turo drivers can order and quickly receive a vehicle inspection report.",
     solution:
       "Разработал гибридный сайт на WordPress и Next.js, интегрировал приём оплат через Stripe и автоматическую отправку готовых отчётов на почту клиентам. Собрал админ-панель, где заказчик видит и обрабатывает все заявки. Дополнительно настроил рекламные кампании в Google Ads.",
+    solution_en:
+      "Built a hybrid WordPress + Next.js website, integrated Stripe payments and automated email delivery of completed reports to clients. Built an admin panel for managing all orders. Additionally set up advertising campaigns in Google Ads.",
     result:
       "Заказчик получил готовый продукт с автоматической выдачей отчётов и админкой, а кампании в Google Ads вышли на конверсию около 4–5% в день.",
+    result_en:
+      "The client received a finished product with automated report delivery and an admin panel, while Google Ads campaigns achieved a conversion rate of around 4–5% per day.",
     role: "Роль: Fullstack-разработчик · Next.js, WordPress, Stripe, Google Ads",
+    role_en: "Role: Fullstack Developer · Next.js, WordPress, Stripe, Google Ads",
     image: "public/cases/inspection.png",
     gallery: [
       { image: "public/cases/inspection-1.png", wide: true },
@@ -132,20 +177,31 @@ const CASES = [
     id: "marking",
     year: 2024,
     title: "Маркировки",
+    title_en: "Product Labeling",
     shotAlt: "Маркировки — сервис маркировки товаров «Честный знак»",
     cardTags: [{ label: "MVP" }, { label: "Next.js", alt: true }],
     cardTask: "Запустить сервис, упрощающий маркировку товаров.",
     cardResult: "Рабочий MVP на Next.js: приём и обработка заявок на маркировку.",
     kicker: "Кейс · MVP",
+    kicker_en: "Case · MVP",
     summary:
       "MVP веб-сервиса, который облегчает продавцам маркировку товаров в «Честном знаке».",
+    summary_en:
+      "MVP of a web service that simplifies product labeling in Russia's Honest Mark system for sellers.",
     detailTags: ["Next.js", "API", "PostgreSQL"],
     task: "Быстро собрать MVP сервиса, который берёт на себя рутину маркировки товаров и приём заявок от продавцов.",
+    task_en:
+      "Quickly build an MVP of a service that handles the routine of product labeling and accepts orders from sellers.",
     solution:
       "Разработал MVP на Next.js с серверным API и базой на PostgreSQL: приём и обработка заявок на маркировку, хранение данных и понятный интерфейс для продавцов.",
+    solution_en:
+      "Built an MVP on Next.js with a server-side API and a PostgreSQL database: accepting and processing labeling orders, storing data, and providing a clear interface for sellers.",
     result:
       "Заказчик получил рабочую первую версию сервиса, готовую принимать заявки и проверять гипотезу на реальных пользователях.",
+    result_en:
+      "The client received a working first version of the service, ready to accept orders and validate the hypothesis with real users.",
     role: "Роль: разработка MVP · Next.js, API, PostgreSQL",
+    role_en: "Role: MVP development · Next.js, API, PostgreSQL",
     image: "public/cases/marking.png",
     gallery: [
       { image: "public/cases/marking-1.png", wide: true },
@@ -161,14 +217,18 @@ const CASES = [
     id: "dealcenter",
     year: 2023,
     title: "DealCenter",
+    title_en: "DealCenter",
     shotAlt: "DealCenter — CRM для автобизнеса",
     cardTags: [{ label: "CRM" }, { label: "Highload", alt: true }],
     cardTask: "Построить CRM для автокредитного бизнеса с нуля до прода.",
     cardResult:
       "Highload-CRM с интеграциями Stripe, DocuSign и ETL — работа команды ×2.",
     kicker: "Кейс · CRM",
+    kicker_en: "Case · CRM",
     summary:
       "CRM для англоязычного бизнеса аренды автомобилей: автоматизация ключевых процессов с нуля до продакшена.",
+    summary_en:
+      "A CRM for an English-language car rental business: automating key processes from scratch to production.",
     detailTags: [
       "Express.js",
       "Python",
@@ -179,11 +239,18 @@ const CASES = [
       "Nginx",
     ],
     task: "Создать с нуля CRM для автобизнеса и автоматизировать ключевые бизнес-процессы под highload-нагрузку.",
+    task_en:
+      "Build a CRM for the automotive business from scratch and automate key business processes for highload.",
     solution:
       "Спроектировал и реализовал клиент-серверную архитектуру под highload, сделал интеграции со Stripe, DocuSign и JotForm, настроил ETL-пайплайны из Monday и автоматическую первичную фильтрацию лидов с помощью ИИ-агентов.",
+    solution_en:
+      "Designed and implemented a client-server architecture for highload, built integrations with Stripe, DocuSign, and JotForm, configured ETL pipelines from Monday, and set up automated lead pre-filtering using AI agents.",
     result:
       "Запустил CRM в продакшен, сократил ручной труд и ускорил обработку данных и работу сотрудников примерно в 2 раза.",
+    result_en:
+      "Launched the CRM to production, reduced manual work, and doubled the speed of data processing and team operations.",
     role: "Роль: Fullstack-разработчик",
+    role_en: "Role: Fullstack Developer",
     image: "public/cases/dealcenter.png",
     gallery: [
       { image: "public/cases/dealcenter-1.png", wide: true },
@@ -566,6 +633,7 @@ function initI18n() {
   /* CASES — detail popup */
   const caseModal = document.getElementById("caseModal");
   if (caseModal) {
+    let currentCaseId = null;
     const cmHero = document.getElementById("cmHero");
     const cmKicker = document.getElementById("cmKicker");
     const cmTitle = document.getElementById("cmTitle");
@@ -706,22 +774,21 @@ function initI18n() {
     );
     window.addEventListener("resize", updateGallery);
 
-    const openCase = (id) => {
-      const d = CASES.find((c) => c.id === id);
-      if (!d) return;
-      caseLastFocus = document.activeElement;
+    const fillCase = (d) => {
       if (cmHero) {
         if (d.nda) {
           cmHero.classList.add("nda");
           cmHero.innerHTML =
             '<svg class="nda-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>' +
-            '<span class="nda-title">Под NDA</span>' +
+            '<span class="nda-title">' +
+            (currentLang === "en" ? "Under NDA" : "Под NDA") +
+            "</span>" +
             '<span class="nda-sub">' +
-            (d.ndaSub ?? "") +
+            (tr(d, "ndaSub") ?? "") +
             "</span>";
         } else {
           cmHero.classList.remove("nda");
-          cmHero.textContent = d.title;
+          cmHero.textContent = tr(d, "title");
         }
         if (d.image) {
           const cover = document.createElement("img");
@@ -734,22 +801,30 @@ function initI18n() {
           cmHero.appendChild(cover);
         }
       }
-      if (cmKicker) cmKicker.textContent = d.kicker;
-      if (cmTitle) cmTitle.textContent = d.title;
-      if (cmSummary) cmSummary.textContent = d.summary;
-      if (cmTask) cmTask.textContent = d.task;
-      if (cmSolution) cmSolution.textContent = d.solution;
-      if (cmResult) cmResult.textContent = d.result;
-      if (cmRole) cmRole.textContent = d.role;
+      if (cmKicker) cmKicker.textContent = tr(d, "kicker");
+      if (cmTitle) cmTitle.textContent = tr(d, "title");
+      if (cmSummary) cmSummary.textContent = tr(d, "summary");
+      if (cmTask) cmTask.textContent = tr(d, "task");
+      if (cmSolution) cmSolution.textContent = tr(d, "solution");
+      if (cmResult) cmResult.textContent = tr(d, "result");
+      if (cmRole) cmRole.textContent = tr(d, "role");
       if (cmTags) {
         cmTags.innerHTML = "";
-        d.detailTags.forEach((t) => {
+        d.detailTags.forEach((tag) => {
           const s = document.createElement("span");
           s.className = "ctag";
-          s.textContent = t;
+          s.textContent = tag;
           cmTags.appendChild(s);
         });
       }
+    };
+
+    const openCase = (id) => {
+      const d = CASES.find((c) => c.id === id);
+      if (!d) return;
+      caseLastFocus = document.activeElement;
+      currentCaseId = id;
+      fillCase(d);
       if (cmGallery) {
         cmGallery.innerHTML = "";
         let row = null;
@@ -775,7 +850,6 @@ function initI18n() {
             img.className = "wide";
             cmGallery.appendChild(img);
           } else if (g.portrait) {
-            // вертикальные скриншоты телефона — до 4 в ряд
             if (!row || rowCount >= 4 || row.dataset.kind !== "phones") {
               row = document.createElement("div");
               row.className = "cm-row phones";
@@ -787,8 +861,6 @@ function initI18n() {
             row.appendChild(img);
             rowCount++;
           } else {
-            // обычные (широкие) скрины группируем по 2 в строку: равная
-            // ширина и фиксированное соотношение сторон → высоты не «скачут»
             if (!row || rowCount >= 2 || row.dataset.kind === "phones") {
               row = document.createElement("div");
               row.className = "cm-row";
@@ -799,8 +871,6 @@ function initI18n() {
             rowCount++;
           }
         });
-        // галерея целиком из вертикальных скринов (Astra) — на мобилке
-        // раскладываем сеткой 2-в-ряд, а не растянутой горизонтальной каруселью
         const allPhones =
           d.gallery.length > 0 && d.gallery.every((g) => g.portrait);
         cmGallery.classList.toggle("phones-grid", allPhones);
@@ -813,6 +883,7 @@ function initI18n() {
       document.body.classList.add("modal-lock");
     };
     const closeCase = () => {
+      currentCaseId = null;
       closeLightbox();
       caseModal.classList.remove("open");
       caseModal.setAttribute("aria-hidden", "true");
@@ -825,6 +896,11 @@ function initI18n() {
         }
       }
     };
+    onLangChange(() => {
+      if (!currentCaseId) return;
+      const d = CASES.find((c) => c.id === currentCaseId);
+      if (d) fillCase(d);
+    });
     document.querySelectorAll(".case[data-case]").forEach((card) => {
       card.addEventListener("click", () =>
         openCase(card.getAttribute("data-case") ?? "")
