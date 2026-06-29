@@ -849,6 +849,7 @@ function initI18n() {
             rowCount = 0;
             img.className = "wide";
             cmGallery.appendChild(img);
+          // вертикальные скриншоты телефона — до 4 в ряд
           } else if (g.portrait) {
             if (!row || rowCount >= 4 || row.dataset.kind !== "phones") {
               row = document.createElement("div");
@@ -860,6 +861,8 @@ function initI18n() {
             img.className = "portrait";
             row.appendChild(img);
             rowCount++;
+          // обычные (широкие) скрины группируем по 2 в строку: равная
+          // ширина и фиксированное соотношение сторон → высоты не «скачут»
           } else {
             if (!row || rowCount >= 2 || row.dataset.kind === "phones") {
               row = document.createElement("div");
@@ -871,6 +874,8 @@ function initI18n() {
             rowCount++;
           }
         });
+        // галерея целиком из вертикальных скринов (Astra) — на мобилке
+        // раскладываем сеткой 2-в-ряд, а не растянутой горизонтальной каруселью
         const allPhones =
           d.gallery.length > 0 && d.gallery.every((g) => g.portrait);
         cmGallery.classList.toggle("phones-grid", allPhones);
